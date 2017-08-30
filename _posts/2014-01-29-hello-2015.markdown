@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      "Hello 2015"
+title:      "Hello Github Blog"
 subtitle:   " \"Hello World, Hello Blog\""
-date:       2015-01-29 12:00:00
-author:     "Hux"
+date:       2017-08-30
+author:     "Palette"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
@@ -15,18 +15,15 @@ tags:
 
 ## 前言
 
-Hux 的 Blog 就这么开通了。
+是的呢，Palette的Github博客页终于变得好看一点了呢！
+那他到底是怎么做的呢？
 
-[跳过废话，直接看技术实现 ](#build) 
-
-
-
-2015 年，Hux 总算有个地方可以好好写点东西了。
+[How to build a individual blog using Github??](#build) 
 
 
-作为一个程序员， Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制不好玩。之前因为太懒没有折腾，结果就一直连个写 Blog 的地儿都没有。
 
-在玩了一段时间知乎之后，答题的快感又激起了我开博客的冲动。之前的[个人网站](http://huangxuan.me/portfolio)是作品集形式的（现在集成进来了），并不适合用来写博文，一不做二不休，花一天搞一个吧！
+作为一个软件工程专业的学生， Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都一般般，二是觉得自己也应该能写出这样的东西吧(太天真了。。。。。）。之前因为与Run Dog大佬暑假咸鱼式学习PHP + Mysql, 导致整个暑假都白白溜走了。。。。现在回想起来，虽然说学到了一些知识，但是博客还是要有的，即使这只是一个Github Page.
+
 
 
 <p id = "build"></p>
@@ -35,6 +32,9 @@ Hux 的 Blog 就这么开通了。
 ## 正文
 
 接下来说说搭建这个博客的技术细节。  
+
+本人今日恰巧看见Github上的一个优秀博客页搭建模板，于是乎下来看看。。。。
+(我也很无奈啊，谁叫我是菜鸡[哭][哭])
 
 正好之前就有关注过 [GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速 Building Blog 的技术方案，非常轻松时尚。
 
@@ -49,7 +49,8 @@ Hux 的 Blog 就这么开通了。
 
 本来觉得最大的缺点可能是 GitHub 在国内访问起来太慢，所以第二天一起床就到 GitCafe(Chinese GitHub Copy，现在被 Coding 收购了) 迁移了一个[镜像](http://huxpro.coding.me)出来，结果还是巨慢。
 
-哥哥可是个前端好嘛！ 果断开 Chrome DevTool 查了下网络请求，原来是 **pending 在了 Google Fonts** 上，页面渲染一直被阻塞到请求超时为止，难怪这么慢。  
+果断开 Chrome DevTool 查了下网络请求，原来是 **pending 在了 Google Fonts** 上，页面渲染一直被阻塞到请求超时为止，难怪这么慢。 
+
 忍痛割爱，只好把 Web Fonts 去了（反正超时看到的也只能是 fallback ），果然一下就正常了，而且 GitHub 和 GitCafe 对比并没有感受到明显的速度差异，虽然 github 的 ping 值明显要高一些，达到了 300ms，于是用 DNSPOD 优化了一下速度。
 
 
@@ -77,6 +78,11 @@ Theme 的 CSS 是基于 Bootstrap 定制的，看得不爽的地方直接在 Les
 
 如果你恰好逛到了这里，希望你也能喜欢这个博客主题。
 
-—— Hux 后记于 2015.10
+## 重点
+
+以上专业说辞皆为该模板的创建者，与本人并无半毛钱关系[哭][哭]。。。。。
+
+—— Palette 于 2017.08
+
 
 
