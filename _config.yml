@@ -6,7 +6,7 @@ description: "一个初入Web开发的小白大学生Palette......"
 keyword: "Palette, HTML, CSS, JavaScript, PHP, C++, Java, Python, 小白"
 url: "https://palette25.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
-
+header-img: sky.jpg
 
 
 # Build settings
