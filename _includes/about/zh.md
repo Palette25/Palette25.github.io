@@ -1,31 +1,26 @@
-> 写写代码，做做设计，  
-> 离开世界之前，一切都是过程。
+> 一天不学习都不行的
+> 有空就写写博客，吹吹水
 
-Hey，我是黄玄，病毒种，进化程度不明，多出没于[博客](https://huangxuan.me)、[微博](weibo.com/huxpro)、[知乎](https://www.zhihu.com/people/huxpro/pins/posts)、[Twitter](https://twitter.com/Huxpro/)、[Github](http://github.com/huxpro)、[Medium](https://medium.com/@Huxpro) 等地带，绝招尚在开发中。
+## About me
 
-职业是软件工程师，[Web 工会](https://medium.com/ben-and-dion/team-web-3315aa447fb2#.359a9c6cl)活跃成员。曾被招募为淘宝网 · [阿里旅行](http://alitrip.com)前端工程师、微影时代 · [微票儿](http://www.wepiao.com/?r=movie)前端基础工程团队负责人、[饿了么](https://ele.me/) · 大前端团队 · [PWA 顾问](https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509)。
+Hello, 大家好，我是Palette，真名是CML(嘿嘿，知道的人肯定一下子就猜出来了),欢迎来到本人最近无聊弄的简陋的博客网站。
+本人是一名SYSU软件工程专业的在校生，暑假过后也正式成为大二了。
 
-一些作品和开源软件项目，👉 戳 [Portfolio](/portfolio)、[Github](http://github.com/huxpro)、[演说.io](http://https://zhuanlan.zhihu.com/p/21280918)。 
 
+## Reason to build this blog
 
-##### Talks
+1. 经过一年的软件工程专业的知识学习，不知不觉间就形成了一个搭建自己博客的想法。之前在廖雪峰的教程上学习过Python，于是想用Python Web技术建站，无奈没能坚持下来，毕竟这需要多方面的知识，最终这个想法也以失败告终(但是博客的雏形还是有的，只不过不够完善)。接下来的我就接触到了HTML和CSS，对Web界面的设计也有一点了解，以及暑假所涉及的PHP和Mysql，更让我感觉实现个人博客的目标越来越近。
 
-- [Upgrading to Progressive Web Apps][9] · [JSConf CN 上海 2017](http://2017.jsconf.cn/)
-- Building Progressive Web Apps · [CSDI 广州 2017](http://www.csdisummit.com/)
-- The State of Progressive Web App · GDG IO Redux 北京 2017
-- 炒冷饭 · PWA 到底是个什么玩意？· Baidu HQ 北京 2017
-- [Service Worker 101][5] · GDG DevFest 北京 2016
-- [Progressive Web App，复兴序章][4] · [QCon 上海 2016](http://2016.qconshanghai.com/presentation/3111)
-- Progressive Web App 之我见 · GDG IO Redux 北京 2016
-- [CSS Still Sucks 2015][2] · 2015
-- [JavaScript 模块化七日谈][1] · 2015
+> 那你为什么选择了Github Page呢？
 
-[1]: //huangxuan.me/2015/07/09/js-module-7day/
-[2]: //huangxuan.me/2015/12/28/css-sucks-2015/
-[3]: //huangxuan.me/2016/06/05/pwa-in-my-pov/
-[4]: //huangxuan.me/2016/10/20/pwa-qcon2016/
-[5]: //huangxuan.me/2016/11/20/sw-101-gdgdf/
-[6]: https://yanshuo.io/assets/player/?deck=58ac8598b123db0067292f92 "PWA Rehashing"
-[7]: https://yanshuo.io/assets/player/?deck=593ad6fbfe88c2006a0a0d6d "The State of PWA"
-[8]: https://yanshuo.io/assets/player/?deck=594d673d570c357d0698a950 "Building PWA"
-[9]: //huangxuan.me/jsconfcn2017/
+2. 但就我个人而言，没有团队和伙伴，都是自己一个人自己写代码什么的，偶尔也咨询一下我们Dog Run大佬，问一下问题。实话实说，Github提供的博客模板虽然复杂，但是加上Jekyll技术的支持，以及各种炫酷的效果，使得建设个人博客简单易懂，也算是省了很多力气吧。
+
+3. 未完待续。。。。
+
+## Tip
+
+1. 感谢本博客模板的提供者Hux, 一位很优秀的前端设计师。
+
+2. 有什么问题的话皆可以联系本人， 邮箱为1377278217@qq.com
+
+3. Enjoying~~~
