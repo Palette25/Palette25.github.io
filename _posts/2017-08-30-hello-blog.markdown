@@ -79,8 +79,8 @@ var gitment = new Gitment({
   owner: 'Palette25',
   repo: 'comment',
   oauth: {
-    client_id: '33330f77fc5c090b329b',
-    client_secret: '20fc9d35757e32236d08164b140ca1da91232044',
+    client_id: 'Palette25',
+    client_secret: 'aSD199811271',
   },
 })
 gitment.render('container')
