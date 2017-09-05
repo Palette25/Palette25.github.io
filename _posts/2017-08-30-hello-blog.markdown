@@ -76,7 +76,7 @@ My real name is CML........
 <script>
 var gitment = new Gitment({
   id: 'location.href', // 可选。默认为 location.href
-  owner: 'Siriussee',
+  owner: 'Palette25',
   repo: 'comment',
   oauth: {
     client_id: '33330f77fc5c090b329b',
