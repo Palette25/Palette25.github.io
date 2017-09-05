@@ -4,7 +4,7 @@ title:      "Hello Github Blog"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2017-08-30
 author:     "Palette"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/hello_github_blog.jpg"
 catalog: true
 tags:
     - 生活
