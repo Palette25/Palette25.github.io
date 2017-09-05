@@ -38,6 +38,8 @@ tags:
 
 正好之前就有关注过 [GitHub Pages](https://pages.github.com/) + [Jekyll](http://jekyllrb.com/) 快速 Building Blog 的技术方案，非常轻松时尚。
 
+## 作者原话
+
 其优点非常明显：
 
 * **Markdown** 带来的优雅写作体验
