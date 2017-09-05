@@ -31,7 +31,7 @@ tags:
 
 ## 正文
 
-接下来说说搭建这个博客的技术细节。  
+接下来说说搭建这个博客的过程。  
 
 本人今日恰巧看见Github上的一个优秀博客页搭建模板，于是乎下来看看。。。。
 (我也很无奈啊，谁叫我是菜鸡[哭][哭])
@@ -77,7 +77,7 @@ My real name is CML........
 var gitment = new Gitment({
   id: 'location.href', // 可选。默认为 location.href
   owner: 'Palette25',
-  repo: 'repo',
+  repo: 'commit',
   oauth: {
     client_id: 'a1ac2783392c3eef32c1',
     client_secret: '9f0d8a41ecc382d04af9eb51007e0696cbbb646f',
