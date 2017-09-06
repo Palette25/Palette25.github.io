@@ -56,7 +56,7 @@ ga_domain: palette25.github.io
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "学无止境<br>无尽地学习..."
-sidebar-avatar: img/star.jpg
+sidebar-avatar: '/img/star.jpg'
 
 
 # Featured Tags
