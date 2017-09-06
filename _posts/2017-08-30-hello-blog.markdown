@@ -7,7 +7,8 @@ author:     "Palette"
 header-img: "img/hello_github_blog.jpg"
 catalog: true
 tags:
-    - 生活
+    - Life
+    - Blog
 ---
 
 > “Yeah It's on. ”
