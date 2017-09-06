@@ -6,7 +6,7 @@ description: "一个初入Web开发的小白大学生Palette......"
 keyword: "Palette, HTML, CSS, JavaScript, PHP, C++, Java, Python, 小白"
 url: "https://palette25.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
-header-img: sky.jpg
+header-img: 'img/sky.jpg'
 
 
 # Build settings
@@ -56,7 +56,7 @@ ga_domain: palette25.github.io
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "学无止境<br>无尽地学习..."
-
+sidebar-avatar: img/star.jpg
 
 
 # Featured Tags
@@ -64,3 +64,18 @@ featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 
+# Friends
+friends: [
+  {
+    title: "Hux Blog",
+    href: "http://huangxuan.me"
+  },
+  {
+    title: "Sirius",
+    href: "http://sirius.info"
+  }
+  {
+    title: "Hoshino Gen",
+    href: "#"
+  }
+]
