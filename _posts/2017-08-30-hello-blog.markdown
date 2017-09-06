@@ -16,7 +16,7 @@ tags:
 
 ## 前言
 
-是的呢，Palette的Github博客页终于变得好看一点了呢！
+是的呢，Palette的Github博客页终于变得好看一点了呢！！！！
 那他到底是怎么做的呢？
 
 [How to build a individual blog using Github??](#build) 
