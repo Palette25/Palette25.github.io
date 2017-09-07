@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+    background-color:lightskyblue;
+}
+#cav{
+    margin: 0 auto;
+    border: 10px outset #000;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+}
+.title{
+    color:dodgerblue;
+    font-size: 60px;
+    text-shadow: 5px 1px 6px black;
+    font-weight:900;
+}
+#score{
+    font-family: 'Times New Roman';
+    font-size: 35px;
+    color: lightseagreen;
+    text-shadow: 1px 1px 1px black;
+}
