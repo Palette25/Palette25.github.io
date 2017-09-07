@@ -74,17 +74,4 @@ My real name is CML........
 <div id="container"></div>
 <link rel="stylesheet" href="https://imsun.GitHub.io/gitment/style/default.css">
 <script src="https://imsun.GitHub.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: 'location.href', // 可选。默认为 location.href
-  owner: 'Palette25',
-  repo: 'Comments',
-  oauth: {
-    client_id: 'a1ac2783392c3eef32c1',
-    client_secret: '9f0d8a41ecc382d04af9eb51007e0696cbbb646f',
-  },
-})
-gitment.render('container')
-</script>
-
-
+<script src="comment.js"></script>
