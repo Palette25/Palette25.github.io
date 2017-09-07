@@ -110,4 +110,4 @@ gitment.render('container')
 <div id="container"></div>
 <link rel="stylesheet" href="https://imsun.GitHub.io/gitment/style/default.css">
 <script src="https://imsun.GitHub.io/gitment/dist/gitment.browser.js"></script>
-<script src="comment.js"></script>
+<script href="comment.js"></script>
