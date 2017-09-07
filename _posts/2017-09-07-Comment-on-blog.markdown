@@ -94,8 +94,9 @@ gitment.render('container')
 
 ## Gitment的使用效果
 
-![reg](img/comment.png)
-
+---
+img: img/comment.png
+---
 总体来讲，这款评论系统代码开源，简单容易上手，界面简洁不多余，初学者的必选，
 可以称为一款优秀的评论应用了。
 
