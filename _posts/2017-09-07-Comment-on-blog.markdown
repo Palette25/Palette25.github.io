@@ -48,7 +48,7 @@ Gitment的使用步骤主要分为3步:
 每个Github用户的Setting页面内都有OAuth Apps选项功能，点击之后, 选择**Register a new OAuth application**
 ，便会出现以下界面。
 
-<img src="img/OAuth.png">
+![img](/img/OAuth.png)
 
 该界面的Application name是允许本人随便填的，做为该应用的名字。
 但接下来的Homepage URL和Authorization callback URL是该应用的主地址和回调默认网址，必须填写你当前
@@ -94,7 +94,7 @@ gitment.render('container')
 
 ## Gitment的使用效果
 
-![](../img/comment.png)
+![img](/img/comment.png)
 
 总体来讲，这款评论系统代码开源，简单容易上手，界面简洁不多余，初学者的必选，
 可以称为一款优秀的评论应用了。
