@@ -63,17 +63,15 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 
 
 # Friends
-friends: [
-  {
-    title: "Hux Blog",
-    href: "http://huangxuan.me"
-  },
-  {
-    title: "Sirius",
-    href: "http://siriussee.info"
-  }
-  {
-    title: "Hoshino Gen",
-    href: "#"
-  }
+friends:  [
+    {
+      title: "Hux Blog",
+      href: "http://huangxuan.me"
+    },{
+      title: "Sirius",
+      href: "http://siriussee.info"
+    },{
+      title: "Hoshino Gen",
+      href: "#"
+    }
 ]
