@@ -125,7 +125,7 @@ gitment.render('container')
 }
 
 var gitment = new Gitment({
-  id: 'location.href', // 可选。默认为 location.href
+  id: 'https://palette25.github.io/2017/09/07/Comment-on-blog/', // 可选。默认为 location.href
   owner: 'Palette25',
   repo: 'Comments',
   oauth: {

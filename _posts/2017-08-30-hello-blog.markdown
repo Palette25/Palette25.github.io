@@ -89,7 +89,7 @@ My real name is CML........
 }
 
 var gitment = new Gitment({
-  id: 'location.href', // 可选。默认为 location.href
+  id: 'https://palette25.github.io/2017/08/30/hello-blog/', // 可选。默认为 location.href
   owner: 'Palette25',
   repo: 'Comments',
   oauth: {
