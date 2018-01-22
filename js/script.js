@@ -6,7 +6,7 @@ window.onload = function(){
 }
 
 function onClick(){
-	var temp = $('pass').value;
+	var temp = $('pass').val();
 	if(temp==='1377278217'){
 
 	}else {
