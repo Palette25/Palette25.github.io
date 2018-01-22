@@ -82,3 +82,22 @@
 .highlight .vi { color: teal; }
 .highlight .il { color: #009999; }
 .highlight .gc { color: #999; background-color: #EAF2F5; }
+
+
+/*new content*/
+#pass{
+	width: 200px;
+}
+
+.pass_check{
+	margin-top: 170px;
+	margin-left: 80px;
+}
+
+#tips{
+	margin-left: 20px;
+}
+
+#btn{
+	background-color: lightskyblue;
+}
