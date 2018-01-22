@@ -2,7 +2,7 @@
 
 
 window.onload = function(){
-	$('#btn').click = onClick;
+	$('#btn').click(onClick);
 }
 
 function onClick(){
