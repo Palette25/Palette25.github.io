@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "现代操作系统开发之~UWP开发历程"
+title:      "UWP学习开发历程(1)"
 subtitle:   " \"My study process of Universal Windows Platform\""
 date:       2018-04-08
 author:     "Palette"
