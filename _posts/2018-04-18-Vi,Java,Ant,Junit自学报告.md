@@ -1,13 +1,28 @@
+---
+layout:     post
+title:      "Vi,Java,Ant,Junit自学报告"
+subtitle:   " \"SYSU中级实训第一阶段，Java以及各项编辑测试工具的学习报告。\""
+date:       2018-04-18
+author:     "Palette"
+header-img: "img/java.jpg"
+catalog: true
+tags:
+    - Java
+    - Programming
+---
+
+> "Short report about Java and tools learning......"
+
 # Vi, Java, Ant, JUnit的自学报告
 ### 姓名：陈明亮
 ### 学号：16340023
 ### 班级：软工一班
 
 ## 一、参考资料
-* https://www.cnblogs.com/0201zcr/p/4781341.html [Vi编辑器操作手册]
-* http://www.runoob.com/java/java-tutorial.html [Java菜鸟教程]
-* https://www.w3cschool.cn/ant/3p7y1hwe.html [w3cschool Apache Ant 教程]
-* https://www.yiibai.com/junit/ [易百JUnit教程]
+	* https://www.cnblogs.com/0201zcr/p/4781341.html [Vi编辑器操作手册]
+	* http://www.runoob.com/java/java-tutorial.html [Java菜鸟教程]
+	* https://www.w3cschool.cn/ant/3p7y1hwe.html [w3cschool Apache Ant 教程]
+	* https://www.yiibai.com/junit/ [易百JUnit教程]
 
 ## 二、自学过程
 1. ### Vi的学习和使用过程
@@ -50,7 +65,7 @@
     
     * Vi的使用心得
 
-      * 在学习Vi指令的过程中，虽然在大一学习C语言和C++时有接触过Vim编辑器的指令使用，而同时Vi和Vim指令十分相同，但由于许久未用Vi编辑器，在终端使用Vi编辑Java代码和XML文件时不免有些不知所措。但由于实训期间有充足的学习资料，以及网上Vi指令介绍的博客不在少数，对Vi操作指令的学习历程也是比较简单，实际上我们在平常编辑文件时只需要记清楚三种模式的作用，以及如何切换，如何保存退出即可，对于其余的指令大多数情况下不会用到，但偶尔也会有很好的用处，比如[yy]复制行指令，和[u]回退，[set nu]显示行号都对于我们的编辑过程有很大的帮助。对于其他图形化编辑器如Sublime和VSCode来说，Vi虽然不是很好用，但是实际上能够让我们对终端命令的操作更加熟练，更能够强化我们对一些必要指令和操作的记忆，帮助我们熟悉和理解Linux下编程的核心。
+      * 在学习Vi指令的过程中，虽然在大一学习C语言和C++时有接触过Vim编辑器的指令使用，而同时Vi和Vim指令十分相同，但由于许久未用Vi编辑器，在终端使用Vi编辑Java代码和XML文件时不免有些不知所措。但由于实训期间有充足的学习资料，以及网上Vi指令介绍的博客不在少数，对Vi操作指令的学习历程也是比较简单，实际上我们在平常编辑文件时只需要记清楚三种模式的作用，以及如何切换，如何保存退出即可，对于其余的指令大多数情况下不会用到，但偶尔也会有很好的用处。
 
 2. ### Java的学习和使用过程
 
@@ -107,7 +122,11 @@
             2. value属性：该属性的来源路径。
 
       * ##### target元素和javac元素
-        * ``` <target name="compile" depends="init"><javac srcdir="${src}" destdir="${dest}"/></target>```
+        * ``` 
+        	<target name="compile" depends="init">
+        		<javac srcdir="${src}" destdir="${dest}"/>
+        	</target>
+          ```
         * target元素是ant指令能够进行的目标操作，标签内部定义了该操作中的行为。javac元素将java文件编译为class文件。
         * 属性介绍：
             1. name属性：target操作的名称。
@@ -170,3 +189,34 @@
     * #### JUnit使用心得
         * JUnit作为单元测试框架，单体上可能不能呈现出它的便利之处，但如果是和Ant搭配使用则会事半功倍，能够在执行部署之前分析一下目标类的各项函数的执行情况，其中的设计也包含在ant的目标操作里面，引入了junit的各项标签功能。总体上讲JUint的使用不难，但在路径的配置需要花点心思。 
         
+
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.GitHub.io/gitment/style/default.css">
+<script src="https://imsun.GitHub.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  const myTheme = {
+  render(state, instance) {
+    const container = document.createElement('div')
+    container.lang = "en-US"
+    container.className = 'gitment-container gitment-root-container'
+    container.appendChild(instance.renderHeader(state, instance))
+    container.appendChild(instance.renderEditor(state, instance))
+    container.appendChild(instance.renderComments(state, instance))
+    container.appendChild(instance.renderFooter(state, instance))
+    return container
+  },
+}
+
+var gitment = new Gitment({
+  id: 'https://palette25.github.io/2017/09/07/Comment-on-blog/', // 可选。默认为 location.href
+  owner: 'Palette25',
+  repo: 'Comments',
+  oauth: {
+    client_id: 'a1ac2783392c3eef32c1',
+    client_secret: '9f0d8a41ecc382d04af9eb51007e0696cbbb646f',
+  },
+  theme: myTheme,
+})
+gitment.render('container')
+</script>
