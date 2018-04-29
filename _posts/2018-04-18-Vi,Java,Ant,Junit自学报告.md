@@ -5,7 +5,7 @@ subtitle:   " \"SYSU中级实训第一阶段，Java以及各项编辑测试工�
 date:       2018-04-18
 author:     "Palette"
 header-img: "img/java.jpg"
-catalog: true
+catalog: false
 tags:
     - Java
     - Programming
