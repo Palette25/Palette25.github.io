@@ -5,7 +5,7 @@ subtitle:   " \"My study process of Universal Windows Platform\""
 date:       2018-04-08
 author:     "Palette" 
 header-img: "img/suwp.jpg"
-catalog: true
+catalog: false
 tags:
     - UWP
     - Programming
@@ -124,49 +124,49 @@ tags:
 * #### 第四周成果截图：
     挂起之前应用的图片
 
-    ![](img/suwp/0.png)
+    ![](/img/suwp/0.png)
 
     重新打开之后的效果
 
-    ![](img/suwp/0.png)
+    ![](/img/suwp/0.png)
 
 * #### 第五周成果截图：
     磁贴效果图(中磁贴)
 
-    ![](img/suwp/2.png)
+    ![](/img/suwp/2.png)
 
     (宽磁贴)
 
-    ![](img/suwp/3.png)
+    ![](/img/suwp/3.png)
 
     (大磁贴)
 
-    ![](img/suwp/4.png)
+    ![](/img/suwp/4.png)
 
     (Bonus项，实现背景图片绑定)
 
-    ![](img/suwp/b.png)
+    ![](/img/suwp/b.png)
 
     应用分享截图
 
-    ![](img/suwp/5.png)
+    ![](/img/suwp/5.png)
 
     (Bonus项，实现分享动态绑定图片)
 
-    ![](img/suwp/9.png)
+    ![](/img/suwp/9.png)
 
 * #### 第六周成果截图：
     数据库可视化工具查看
 
-    ![](img/suwp/7.png)
+    ![](/img/suwp/7.png)
 
     对应的应用截图
 
-    ![](img/suwp/6.png)
+    ![](/img/suwp/6.png)
 
     搜索功能展示截图
 
-    ![](img/suwp/10.png)
+    ![](/img/suwp/10.png)
 
 ## 四、亮点与改进
 1. ### 挂起并关闭保存上传的图片数据，做法是将上传的图片存入数据库文件区存储，在挂起前存储路径，重新开启后根据路径重新读入上传的图片文件。

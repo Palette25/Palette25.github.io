@@ -5,7 +5,7 @@ subtitle:   " \"My study process of Universal Windows Platform\""
 date:       2018-04-08
 author:     "Palette" 
 header-img: "img/tuwp.jpg"
-catalog: true
+catalog: false
 tags:
     - UWP
     - Programming
@@ -52,21 +52,21 @@ tags:
 ## 三、关键步骤截图
 * 第一、二周成果：MainPage和NextPage
 
-    ![](img/tuwp/4.png)
-    ![](img/tuwp/2.png)
+    ![](/img/tuwp/4.png)
+    ![](/img/tuwp/2.png)
 
 * 第三周改进：
     MainPage (宽度适中)
     
-    ![](img/tuwp/1.png)
+    ![](/img/tuwp/1.png)
 
     (大宽度界面)
     
-    ![](img/tuwp/3.png)
+    ![](/img/tuwp/3.png)
 
     (Bonus项，添加鼠标悬停显示详情)
     
-    ![](img/tuwp/5.png)
+    ![](/img/tuwp/5.png)
 
 
 ## 四、亮点与改进
