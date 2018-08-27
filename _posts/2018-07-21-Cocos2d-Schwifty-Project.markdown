@@ -126,7 +126,7 @@ tags:
 #### 游戏视频展示
 
 
-<video id='video' controls="" preload="none" height="480" width="520">
+<video id='video' controls="" preload="none" height="560" width="810">
 	<source id='mp4' src="/img/schwifty/test.mp4" type="video/mp4">
 </video>
 
