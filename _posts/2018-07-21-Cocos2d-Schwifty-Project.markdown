@@ -124,7 +124,7 @@ tags:
 
 16. 游戏视频展示
 
-    <iframe height=498 width=510 src="/img/schwifty/0.mp4"></iframe>
+    <iframe height=498 width=510 src="/img/schwifty/test.mp4"></iframe>
 
     ---
 
