@@ -122,11 +122,11 @@ tags:
 
 ![img](/img/schwifty/18.png)
 
-16. 游戏视频展示
 
-   <iframe height=498 width=510 src="/img/schwifty/test.mp4"></iframe>
+#### 游戏视频展示
 
-    ---
+<iframe height=498 width=510 src="/img/schwifty/test.mp4"></iframe>
+---
 
     ​
 
