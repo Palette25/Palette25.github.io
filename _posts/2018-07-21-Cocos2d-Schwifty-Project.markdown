@@ -125,7 +125,10 @@ tags:
 
 #### 游戏视频展示
 
-<iframe height=498 width=510 src="/img/schwifty/test.mp4"></iframe>
+
+<video id='video' controls="" preload="none">
+	<source id='mp4' src="/img/schwifty/test.mp4" type="video/mp4">
+</video>
 ---
 
     ​
