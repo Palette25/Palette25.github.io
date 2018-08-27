@@ -54,73 +54,73 @@ tags:
 
 1．游戏初始界面：
 
-![img](E:\Github\blog\img\schwifty\2.png)
+![img](/img/schwifty/2.png)
 
 
 2．进入游戏需要登录账号，账号可以注册获得：
 
-![img](E:\Github\blog\img\schwifty\3.png)
+![img](/img/schwifty/3.png)
 
-![img](E:\Github\blog\img\schwifty\4.png)
+![img](/img/schwifty/4.png)
 
 3．登录后的游戏界面：
 
-![img](E:\Github\blog\img\schwifty\5.png)
+![img](/img/schwifty/5.png)
 
 游戏界面（多个用户）：
 
-![img](E:\Github\blog\img\schwifty\6.png)
+![img](/img/schwifty/6.png)
 
 4．可以看到界面右上方除了用户信息还有一个隐藏的按钮，鼠标移上去之后：
 
-![img](E:\Github\blog\img\schwifty\7.png)
+![img](/img/schwifty/7.png)
 
 5．点击它即可显示用户当前拥有的牌组：
 
-![img](E:\Github\blog\img\schwifty\8.png)
+![img](/img/schwifty/8.png)
 
 6．靠近别的用户时，按下空格键可以发出对战邀请
 
-![img](E:\Github\blog\img\schwifty\9.png)
+![img](/img/schwifty/9.png)
 
 7．同样，也可能收到来自别人的对战邀请
 
-![img](E:\Github\blog\img\schwifty\10.png)
+![img](/img/schwifty/10.png)
 
 8．双方同意后，可进入牌局
 
-![img](E:\Github\blog\img\schwifty\11.png)
+![img](/img/schwifty/11.png)
 
 9．牌局界面：左边一栏为角色以及总分对比，下方为己方手牌，上方为对方手牌，中间
 每个用户各有三行可出牌位置，相同稀有程度的牌只能出在同一行。在出牌区右方显示的是现在点击的牌的详情页面，同时点击“End Your Round”可以结束这一局（三局两胜制）
 
-![img](E:\Github\blog\img\schwifty\12.png)
+![img](/img/schwifty/12.png)
 
 10．点击“End Your Round”：
 
-![img](E:\Github\blog\img\schwifty\13.png)
+![img](/img/schwifty/13.png)
 
 11．轮到己方出牌：
 
-![img](E:\Github\blog\img\schwifty\14.png)
+![img](/img/schwifty/14.png)
 
 
 12．赢得一局：
 
-![img](E:\Github\blog\img\schwifty\15.png)
+![img](/img/schwifty/15.png)
 
 13．输掉一局：
 
-![img](E:\Github\blog\img\schwifty\16.png)
+![img](/img/schwifty/16.png)
 
 
 14．赢得两局取得胜利：
 
-![img](E:\Github\blog\img\schwifty\17.png)
+![img](/img/schwifty/17.png)
 
 15．输给对手：
 
-![img](E:\Github\blog\img\schwifty\18.png)
+![img](/img/schwifty/18.png)
 
 ## 三、项目难点及解决方案
 
@@ -140,7 +140,7 @@ tags:
 
 问题描述：卡牌游戏的实现难点就在于游戏逻辑的建立，以及前后端沟通“协议”的规定，以及对WebSocket消息的发送，接收相关信息后做出的行为。
 
-解决方法：我们将前后端之间的信息交流以一定的格式建立，如“userLogin||Hello”，是服务端告诉全体玩家，新用户Hello登入；“play&&8”是玩家发送给服务器，表示他打出了ID为8的牌。如此约束交换的信息，使得前后端都很容易解析并获取相关内容。
+解决方法：我们将前后端之间的信息交流以一定的格式建立，如“userLogin || Hello”，是服务端告诉全体玩家，新用户Hello登入；“play&&8”是玩家发送给服务器，表示他打出了ID为8的牌。如此约束交换的信息，使得前后端都很容易解析并获取相关内容。
 
 ### 4.服务端的WebSocket对个体用户的单独传输数据
 
