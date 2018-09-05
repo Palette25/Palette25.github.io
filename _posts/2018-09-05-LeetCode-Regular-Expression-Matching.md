@@ -11,7 +11,6 @@ tags:
 	- LeetCode
 	- String Matching
 	- Programming
-
 ---
 
 > "Begin to write down solving reports for problems on LeetCode Algorithm problems-set...."
