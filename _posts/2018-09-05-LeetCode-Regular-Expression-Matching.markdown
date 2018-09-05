@@ -4,7 +4,7 @@ title:    "LeetCode题解 - Regular Expression Matching"
 subtitle: " \"For Algorithm Course\""
 date:     2018-09-05
 author:   "Palette"
-header-img: "img/leetcode.jpg"
+header-img: "img/houses.jpg"
 catalog: true
 tags:
     - C++
@@ -48,7 +48,7 @@ p could be empty and contains only lowercase letters a-z, and characters like . 
 * 关于匹配规则以及实现方法我们可以分为以下两类，第一种是直观的迭代匹配法，思想简单复杂度高，但却是最容易实现的写法；第二种是动态规划DP写法，采用dp数组存储匹配生成串，是空间换时间的写法。
 
 ### 题目解法：
-1. ### **迭代法**
+1. ###**迭代法**
 * #### 解法概要
 		迭代求解字符串匹配问题，首先需要检测空字符串情况，其次在该步迭代中对第一位字符非`*`情况进行是否成功匹配判断，以及后一位是否为`*`进行不同的迭代操作，综合各项匹配Flag判断迭代返回值。
 	![img](/img/leetcode-1-1.jpg)
@@ -83,10 +83,9 @@ public:
 
   开辟`s.len X p.len`大小的二维数组dp，我们定义以下操作：
 
-  1. dp$[i][j]$  = dp$[i-1][j-1]$, 当且仅当p$[j-1]$ != '*'，同时对应位置的字符匹配成功，即(p$[j-1]$ == '.' || s$[i-1]$ == p$[j-1]$)。
-  2. dp$[i][j]$ = dp$[i][j-2]$, 当且仅当p$[j-1]$ == '*', 并且该替位符重复了0次。
-  3. dp$[i][j]$ = dp$[i-1][j]$, 当且仅当p$[j-1]$ == '*', 并且重复了若干次，即(s$[i-1]$ == p$[j-2]$ || p$[j-2]$ == '.')
-
+  1. dp[i][j]  = dp[i-1][j-1], 当且仅当p[j-1] != '*'，同时对应位置的字符匹配成功，即(p[j-1] == '.' || s[i-1] == p[j-1])。
+  2. dp[i][j] = dp[i][j-2], 当且仅当p[j-1] == '*', 并且该替位符重复了0次。
+  3. dp[i][j] = dp[i-1][j], 当且仅当p[j-1] == '*', 并且重复了若干次，即(s[i-1] == p[j-2] || p[j-2] == '.')
 * #### C++代码
 
   ```c++
