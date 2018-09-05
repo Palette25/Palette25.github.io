@@ -1,9 +1,9 @@
 ---
-layout: post
-title: "LeetCode题解 - Regular Expression Matching"
-subtitle: "For Algorithm Course"
-date: 2018-09-05
-author: "Palette"
+layout:   post
+title:    "LeetCode题解 - Regular Expression Matching"
+subtitle: " \"For Algorithm Course\""
+date:     2018-09-05
+author:   "Palette"
 header-img: "img/leetcode.jpg"
 catalog: false
 tags:
@@ -15,9 +15,9 @@ tags:
 
 > "Begin to write down solving reports for problems on LeetCode Algorithm problems-set...."
 
-## 10. Regular Expression Matching
+## LeetCode题解 - Regular Expression Matching
 ### 题目难度: `Hard`
-### 题目地址: https://leetcode.com/problems/regular-expression-matching/description/
+### 题目地址: [No.5  Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/description/)
 ### 题目描述:
 ```
 Given an input string (s) and a pattern (p), implement regular expression matching with support for '.' and '*'.
