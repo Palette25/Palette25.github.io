@@ -5,12 +5,12 @@ subtitle: " \"For Algorithm Course\""
 date:     2018-09-05
 author:   "Palette"
 header-img: "img/leetcode.jpg"
-catalog: false
+catalog: true
 tags:
-	- C++
-	- LeetCode
-	- String Matching
-	- Programming
+    - C++
+    - LeetCode
+    - String Matching
+    - Programming
 ---
 
 > "Begin to write down solving reports for problems on LeetCode Algorithm problems-set...."
