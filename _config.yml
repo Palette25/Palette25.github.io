@@ -10,6 +10,7 @@ header-img: 'img/sky.jpg'
 
 # SNS settings
 RSS: false
+Access_Number: 0
 #weibo_username:     huxpro
 #zhihu_username:     huxpro
 github_username:    palette25
