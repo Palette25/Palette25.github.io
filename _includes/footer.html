@@ -83,7 +83,9 @@
                     Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
                     <br>
                     Create by <a href="https://github.com/Palette25">Palette</a> |
-                    Total Access Number<span data-hk-page="current"> - </span>
+                    <div class="post-meta">
+                        <p>总访问量<span id="busuanzi_value_page_pv">0</span>次</p>
+                    </div>
                 </p>
             </div>
         </div>
@@ -106,7 +108,7 @@
 <script src="{{ "/js/sw-registration.js " | prepend: site.baseurl }}"></script>
 {% endif %}
 
-<script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-0.1.1.js"></script>
+<script async="" src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <!-- async load function -->
 <script>
     function async(u, c) {
