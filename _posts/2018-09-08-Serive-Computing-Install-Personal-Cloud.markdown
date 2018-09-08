@@ -16,7 +16,7 @@ tags:
 
 # Win10环境下安装配置VirtualBox，搭建Ubuntu私有云
 
-### [Win10环境下搭建Centos私有云(同队队员的博客，给有需要搭建Centos虚拟机的同学)](https://krazymud.github.io)
+#### [Win10环境下搭建Centos私有云(同队队员的博客，给有需要搭建Centos虚拟机的同学)](https://krazymud.github.io)
 
 ## 实验需求：
 1. 下载安装VirtualBox，由于本人PC机使用的操作系统为windows，故下载的Platform Packages为Windows hosts，其他系统的同学根据自己需要选择下载格式，下载链接：[VirtualBox官网](https://www.virtualbox.org/wiki/Downloads)
@@ -28,6 +28,7 @@ tags:
 3. 下载虚拟机系统镜像文件，Ubuntu系统推荐带图形化界面的镜像包，下面给出下载网址：[Centos下载地址](https://www.centos.org/download/)， [Ubuntu下载地址](https://www.ubuntu.com/download/desktop)
 
 ## 实验配置过程
+
 ### 1. 新建虚拟机
 * 点击主菜单上的`新建`按钮，输入对应虚拟机的名称，*此处推荐不同系统的名称前缀要对应，方便VirtualBox进行查找匹配，如Ubuntu系统名为ub-xx，Centos系统名为centos-xx*，然后分配虚拟机系统内存，一般2-4G即可，然后一路默认即可(有想法的同学可以不采取动态分配硬盘空间，但是固定存储硬盘的生成时间较长，需要耐心等待)
 
