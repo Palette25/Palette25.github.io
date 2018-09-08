@@ -37,6 +37,7 @@ tags:
 *虚拟机新建成功*
 ![img](/img/Service_Computing_blogs/Install_and_configure_personal_cloud/6.png)
 
+### 2. 配置虚拟机网络
 * 创建虚拟机内部的虚拟网络，首先需要创建虚拟网卡。打开VirtualBox主菜单，选中已创建的虚拟机，点击`设置` -> `网络`，配置虚拟网卡。
     1. 网卡1的连接方式为*网络地址转换(NAT)*，该网卡负责连通虚拟机的外网连通，通过与主机网络之间的NAT连接进行访问。
 
