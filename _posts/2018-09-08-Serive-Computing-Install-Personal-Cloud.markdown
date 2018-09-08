@@ -16,7 +16,7 @@ tags:
 
 # Win10环境下安装配置VirtualBox，搭建Ubuntu私有云
 
-### [Win10环境下搭建Centos私有云](https://krazymud.github.io)
+### [Win10环境下搭建Centos私有云(同队队员的博客，给有需要搭建Centos虚拟机的同学)](https://krazymud.github.io)
 
 ## 实验需求：
 1. 下载安装VirtualBox，由于本人PC机使用的操作系统为windows，故下载的Platform Packages为Windows hosts，其他系统的同学根据自己需要选择下载格式，下载链接：[VirtualBox官网](https://www.virtualbox.org/wiki/Downloads)
@@ -30,6 +30,7 @@ tags:
 ## 实验配置过程
 ### 1. 新建虚拟机
 * 点击主菜单上的`新建`按钮，输入对应虚拟机的名称，*此处推荐不同系统的名称前缀要对应，方便VirtualBox进行查找匹配，如Ubuntu系统名为ub-xx，Centos系统名为centos-xx*，然后分配虚拟机系统内存，一般2-4G即可，然后一路默认即可(有想法的同学可以不采取动态分配硬盘空间，但是固定存储硬盘的生成时间较长，需要耐心等待)
+
 *命名界面*
 ![img](/img/Service_Computing_blogs/Install_and_configure_personal_cloud/1.png)
 *虚拟机新建成功*
@@ -62,7 +63,6 @@ tags:
     3. 主机与虚拟机之间相互ping通，主机使用ssh连接虚拟机
     首先我们需要关闭双方的专用网络防火墙(*尤其是宿主机windows系统的防火墙*)，否则我们是无法ping通的。在宿主机的某一终端(如：Powerhell，git bash)输入`ping 你的虚拟机子网络IP`，若能够正常接收数据包则ping通；在虚拟机的终端输入`ping 192.168.100.1`，若能够正常接收数据包则ping通。
     接下来我们需要在宿主机的git bash上键入`ssh 你的虚拟子网络IP -l 你的虚拟机用户名`, 若询问是否信任对方，则连接成功，输入对应的密码即可；反之则连接失败，网卡设置出现问题，需要你回去以上步骤重新配置(*耐心是关键*)
-
     * ssh连接成功界面
     ![img](/img/Service_Computing_blogs/Install_and_configure_personal_cloud/10.png)
 
