@@ -114,7 +114,7 @@ var gitment = new Gitment({
   repo: 'Comments',
   oauth: {
     client_id: 'a1ac2783392c3eef32c1',
-    client_secret: '9f0d8a41ecc382d04af9eb51007e0696cbbb646f',
+    client_secret: 'ea8605a4a85131c5012ba8f200f87702e15a05b0',
   },
   theme: myTheme,
 })
