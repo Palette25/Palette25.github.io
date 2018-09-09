@@ -46,11 +46,11 @@ Note:
 
 示例输入：
 
-![img](/img/input-sokudo.png)
+![img](/img/input-sodoku.png)
 
 示例输出：
 
-![img](/img/output-sokudo.png)
+![img](/img/output-sodoku.png)
 
 
 ### 题目思路：
@@ -116,6 +116,7 @@ private:
 
 ### 运行结果：
 ![img](/img/37.png)
+![img](/img/37-2.png)
 
 <div id="container"></div>
 <link rel="stylesheet" href="https://imsun.GitHub.io/gitment/style/default.css">
@@ -135,7 +136,6 @@ private:
 }
 
 var gitment = new Gitment({
-  id: 'https://palette25.github.io/2017/09/07/Comment-on-blog/', // 可选。默认为 location.href
   owner: 'Palette25',
   repo: 'Comments',
   oauth: {
