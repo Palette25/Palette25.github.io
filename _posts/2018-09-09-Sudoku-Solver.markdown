@@ -46,11 +46,11 @@ Note:
 
 示例输入：
 
-![img](/img/input-sodoku.png)
+![img](/img/inputSodoku.png)
 
 示例输出：
 
-![img](/img/output-sodoku.png)
+![img](/img/outputSodoku.png)
 
 
 ### 题目思路：
@@ -115,7 +115,7 @@ private:
 ```
 
 ### 运行结果：
-![img](/img/37.png)
+![img](/img/37-1.png)
 ![img](/img/37-2.png)
 
 <div id="container"></div>
@@ -136,6 +136,7 @@ private:
 }
 
 var gitment = new Gitment({
+  id: 'location.href',
   owner: 'Palette25',
   repo: 'Comments',
   oauth: {

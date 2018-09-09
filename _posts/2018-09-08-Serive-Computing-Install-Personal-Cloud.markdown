@@ -109,6 +109,7 @@ sudo mkdir Applications/go
 }
 
 var gitment = new Gitment({
+  id: 'location.href',
   owner: 'Palette25',
   repo: 'Comments',
   oauth: {
