@@ -87,7 +87,7 @@ sudo dpkg -i google-chrome*; sudo apt-get -f install
 ```
 sudo apt-get install golang-go
 export GOROOT=$HOME/go
-export PATH=$GOROOT/bin:$PATHU
+export PATH=$PATH:$GOROOT/bin
 sudo mkdir Applications/go
 ```
 
