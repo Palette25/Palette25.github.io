@@ -16,7 +16,7 @@ tags:
 
 # Win10环境下安装配置VirtualBox，搭建Ubuntu私有云
 
-#### [Win10环境下搭建Centos私有云(同队队员的博客，给有需要搭建Centos虚拟机的同学)](https://krazymud.github.io)
+#### [Win10环境下搭建Centos私有云(同队队员的博客，给有需要搭建Centos虚拟机的同学)](https://krazymud.github.io/2018/09/09/vbox-cfg/#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C)
 
 ## 实验需求：
 1. 下载安装VirtualBox，由于本人PC机使用的操作系统为windows，故下载的Platform Packages为Windows hosts，其他系统的同学根据自己需要选择下载格式，下载链接：[VirtualBox官网](https://www.virtualbox.org/wiki/Downloads)
