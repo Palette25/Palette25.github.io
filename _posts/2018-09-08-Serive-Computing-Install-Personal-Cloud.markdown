@@ -109,7 +109,7 @@ sudo mkdir Applications/go
 }
 
 var gitment = new Gitment({
-  id: 'location.href',
+  id: 'https://palette25.github.io/2018/09/08/Serive-Computing-Install-Personal-Cloud/',
   owner: 'Palette25',
   repo: 'Comments',
   oauth: {

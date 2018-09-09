@@ -46,11 +46,11 @@ Note:
 
 示例输入：
 
-![img](/img/inputSodoku.png)
+![img](/img/inputSudoku.png)
 
 示例输出：
 
-![img](/img/outputSodoku.png)
+![img](/img/outputSudoku.png)
 
 
 ### 题目思路：
@@ -136,7 +136,7 @@ private:
 }
 
 var gitment = new Gitment({
-  id: 'location.href',
+  id: 'https://palette25.github.io/2018/09/09/Sudoku-Solver/',
   owner: 'Palette25',
   repo: 'Comments',
   oauth: {
