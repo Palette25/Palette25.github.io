@@ -136,7 +136,7 @@ private:
 }
 
 var gitment = new Gitment({
-  id: 'https://palette25.github.io/2017/09/07/Comment-on-blog/',
+  id: 'https://palette25.github.io/2018/09/09/Sudoku-Solver/',
   owner: 'Palette25',
   repo: 'Comments',
   oauth: {
