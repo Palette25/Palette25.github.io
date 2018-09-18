@@ -1,6 +1,6 @@
 ---
 layout:   post
-title:    "LeetCode题解 - Regular Expression Matching"
+title:    "LeetCode 10 - Regular Expression Matching"
 subtitle: " \"For Algorithm Course\""
 date:     2018-09-05
 author:   "Palette"

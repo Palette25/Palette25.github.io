@@ -1,6 +1,6 @@
 ---
 layout:   post
-title:    "LeetCode题解(二) - Sudoku-Solver"
+title:    "LeetCode 37 - Sudoku-Solver"
 subtitle: " \"For Algorithm Course\""
 date:     2018-09-09
 author:   "Palette"
