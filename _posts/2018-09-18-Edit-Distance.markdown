@@ -4,7 +4,7 @@ title:    "LeetCode 72 - Edit Distance"
 subtitle: " \"For Algorithm Course\""
 date:     2018-09-18
 author:   "Palette"
-header-img: "img/church.jpg"
+header-img: "img/night.jpg"
 catalog: true
 tags:
     - C++
