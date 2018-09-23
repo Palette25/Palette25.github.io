@@ -111,12 +111,12 @@ $ sudo apt-get install sublime-text-installer   #安装Sublime Text 3
 3. 以上两种编辑器皆为非原生编辑器，首次使用时在图形化桌面搜索关键字打开并锁定到桌面，或者直接到安装路径打开即可。
 接下来介绍Linux系统原生编辑器`vim`的配置。
 
-* 打开vim配置文件
+打开vim配置文件
 ```
 $ sudo vim /etc/vim/vimrc
 ```
 
-* 配置所需功能
+配置所需功能
 ```
 set tabstop=4         #Tab宽度为4
 set nobackup          #禁止生成临时文件
@@ -134,7 +134,7 @@ inoremap " ""<ESC>i   #双引号补全
 inoremap ( ()<ESC>i   #括号补全
 ```
 
-* 执行修改
+执行修改
 ```
 $ source /etc/vim/vimrc
 ```
