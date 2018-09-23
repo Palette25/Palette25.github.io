@@ -4,7 +4,7 @@ title:    "Service Computing课程博客(二) - 安装Ubuntu下Go语言环境"
 subtitle: " \"Start to learn coding with Go-lang\""
 date:     2018-09-21
 author:   "Palette"
-header-img: "img/golang2.jpg"
+header-img: "img/go.jpg"
 catalog: true
 tags:
     - Linux
