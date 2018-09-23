@@ -33,11 +33,11 @@ tags:
 
 ## 实验配置过程
 #### 1. 安装Go语言环境
-* 开启VirtualBox虚拟机，在Win10宿主机上使用ssh连接Ubuntu私有云，开始命令行操作。首先，我们需要获取Golang的依赖包(*不需要翻墙*)，之后直接执行安装，命令如下：
+* 开启VirtualBox虚拟机，在Win10宿主机上使用ssh连接Ubuntu私有云，开始命令行操作。首先，我们需要获取Golang的依赖包，之后直接执行安装，命令如下：
 ```
 $ sudo apt-get install golang-go
 ```
-* 执行完该条语句之后，Ubuntu 16.04系统中go环境依赖包会默认安装在路径：`/usr/share/go`，不然则使用rpm查看安装路径：
+* 执行完该条语句之后，Ubuntu 16.04系统中go环境依赖包会默认安装在路径：`/usr/lib/go`，不然则使用rpm查看安装路径：
 
 ```
 $ rpm -ql golang-go |more
@@ -56,7 +56,7 @@ $ sudo vim ~/.bashrc
 3. 最后设置GOPATH环境变量值，路径值填入第一步创建的文件名
 ```
 export GOPATH="$HOME/gowork"
-export GOROOT="/usr/share/go"
+export GOROOT="/usr/lib/go"
 ```
 4. 执行配置
 ```
@@ -70,7 +70,7 @@ $ go env
 
 #### 2. 创建简单Go程序文件，测试环境
 * 此处我们首先使用vim进行hello.go的编写创建，并使用`go run`查看结果
-```c++
+```
 package main
 
 import "fmt"
