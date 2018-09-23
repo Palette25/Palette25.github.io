@@ -4,7 +4,7 @@ title:    "Service Computing课程博客(二) - 安装Ubuntu下Go语言环境"
 subtitle: " \"Start to learn coding with Go-lang\""
 date:     2018-09-21
 author:   "Palette"
-header-img: "img/golang.jpg"
+header-img: "img/golang1.jpg"
 catalog: true
 tags:
     - Linux
@@ -38,30 +38,34 @@ tags:
 $ sudo apt-get install golang-go
 ```
 * 执行完该条语句之后，Ubuntu 16.04系统中go环境依赖包会默认安装在路径：`/usr/lib/go`，不然则使用rpm查看安装路径：
-
 ```
 $ rpm -ql golang-go |more
 ```
 
 * 设置GoPath路径值
 为了保证Go语言正常进行保存，运行等操作，我们需要设置其环境变量值，其中最重要的即设置GoPath值(放置Go源程序路径)，GoRoot值(Go安装环境根路径)
+
 1. 创建Go代码文件存储路径，当然如果你想更改存储文件名，或者直接修改存储位置也是可以的
 ```
 $ mkdir $HOME/gowork
 ```
+
 2. 第二步打开系统路径设置文件bashrc，记得使用sudo命令进入管理员身份
 ```
 $ sudo vim ~/.bashrc
 ```
+
 3. 最后设置GOPATH环境变量值，路径值填入第一步创建的文件名
 ```
 export GOPATH="$HOME/gowork"
 export GOROOT="/usr/lib/go"
 ```
+
 4. 执行配置
 ```
 $ source ~/.bashrc
 ```
+
 5. 检查Go环境配置情况，如果GOPATH，GOROOT值正确，则配置成功
 ```
 $ go env
@@ -69,7 +73,7 @@ $ go env
 
 
 #### 2. 创建简单Go程序文件，测试环境
-* 此处我们首先使用vim进行hello.go的编写创建，并使用`go run`查看结果
+* 此处我们首先使用vim进行hello.go的编写创建，并使用`go run`查看结果。
 ```
 package main
 
