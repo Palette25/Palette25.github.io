@@ -110,6 +110,7 @@ $ sudo apt-get install sublime-text-installer   #安装Sublime Text 3
 
 3. 以上两种编辑器皆为非原生编辑器，首次使用时在图形化桌面搜索关键字打开并锁定到桌面，或者直接到安装路径打开即可。
 接下来介绍Linux系统原生编辑器`vim`的配置。
+
 * 打开vim配置文件
 ```
 $ sudo vim /etc/vim/vimrc
@@ -146,6 +147,7 @@ $ sudo apt-get install git
 ```
 
 2. 配置VSCode所需工具
+
 * 首次进入VSCode使用界面，会提示需要安装Go开发插件，但是无法翻墙的小伙伴是安装不了的，所以需要在github上拉下来安装。
 ```
 $ mkdir $GOROOT/src/golang.org/x/
