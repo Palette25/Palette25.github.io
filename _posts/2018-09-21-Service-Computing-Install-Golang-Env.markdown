@@ -44,28 +44,23 @@ $ rpm -ql golang-go |more
 
 * 设置GoPath路径值
 为了保证Go语言正常进行保存，运行等操作，我们需要设置其环境变量值，其中最重要的即设置GoPath值(放置Go源程序路径)，GoRoot值(Go安装环境根路径)
-
 1. 创建Go代码文件存储路径，当然如果你想更改存储文件名，或者直接修改存储位置也是可以的
 ```
 $ mkdir $HOME/gowork
 ```
-
 2. 第二步打开系统路径设置文件bashrc，记得使用sudo命令进入管理员身份
 ```
 $ sudo vim ~/.bashrc
 ```
-
 3. 最后设置GOPATH环境变量值，路径值填入第一步创建的文件名
 ```
 export GOPATH="$HOME/gowork"
 export GOROOT="/usr/lib/go"
 ```
-
 4. 执行配置
 ```
 $ source ~/.bashrc
 ```
-
 5. 检查Go环境配置情况，如果GOPATH，GOROOT值正确，则配置成功
 ```
 $ go env
@@ -110,13 +105,11 @@ $ sudo apt-get install sublime-text-installer   #安装Sublime Text 3
 
 3. 以上两种编辑器皆为非原生编辑器，首次使用时在图形化桌面搜索关键字打开并锁定到桌面，或者直接到安装路径打开即可。
 接下来介绍Linux系统原生编辑器`vim`的配置。
-
-打开vim配置文件
+* 打开vim配置文件
 ```
 $ sudo vim /etc/vim/vimrc
 ```
-
-配置所需功能
+* 配置所需功能
 ```
 set tabstop=4         #Tab宽度为4
 set nobackup          #禁止生成临时文件
@@ -133,36 +126,32 @@ inoremap ' ''<ESC>i   #单引号补全
 inoremap " ""<ESC>i   #双引号补全
 inoremap ( ()<ESC>i   #括号补全
 ```
-
-执行修改
+* 执行修改
 ```
 $ source /etc/vim/vimrc
 ```
 
 
 #### 4. 安装必要的工具和插件
-1. 安装Git客户端
+* 安装Git客户端
 ```
 $ sudo apt-get install git
 ```
 
-2. 配置VSCode所需工具
-
-* 首次进入VSCode使用界面，会提示需要安装Go开发插件，但是无法翻墙的小伙伴是安装不了的，所以需要在github上拉下来安装。
+* 配置VSCode所需工具
+1. 首次进入VSCode使用界面，会提示需要安装Go开发插件，但是无法翻墙的小伙伴是安装不了的，所以需要在github上拉下来安装。
 ```
 $ mkdir $GOROOT/src/golang.org/x/
 $ go get -d github.com/golang/tools
 $ cp $GOROOT/src/github.com/golang/tools $GOROOT/src/golang.org/x/ -rf
 ```
-
-* 安装所需工具包(上述shell命令之所以使用$GOROOT，是因为下述安装过程依赖于许多Go程序包，它们并非在$GOPATH上)
+2. 安装所需工具包(上述shell命令之所以使用$GOROOT，是因为下述安装过程依赖于许多Go程序包，它们并非在$GOPATH上)
 ```
 $ go install golang.org/x/tools/go/buildutil
 ```
+3. 重启VSCode，按照步骤安装插件，完成。
 
-* 重启VSCode，按照步骤安装插件，完成。
-
-3. 安装运行go tour
+* 安装运行go tour
 ```
 $ go get github.com/Go-zh/tour/gotour
 $ go tour
