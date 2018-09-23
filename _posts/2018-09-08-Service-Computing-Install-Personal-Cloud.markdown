@@ -1,6 +1,6 @@
 ---
 layout:   post
-title:    "Serive Computing课程博客(一) - 配置个人私有云"
+title:    "Service Computing课程博客(一) - 配置个人私有云"
 subtitle: " \"Learn to build your own cloud..\""
 date:     2018-09-08
 author:   "Palette"
