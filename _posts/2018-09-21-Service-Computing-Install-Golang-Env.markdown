@@ -4,7 +4,7 @@ title:    "Service Computing课程博客(二) - 安装Ubuntu下Go语言环境"
 subtitle: " \"Start to learn coding with Go-lang\""
 date:     2018-09-21
 author:   "Palette"
-header-img: "img/go.jpg"
+header-img: "img/go1.jpg"
 catalog: true
 tags:
     - Linux
@@ -75,15 +75,15 @@ $ go env
 #### 2. 创建简单Go程序文件，测试环境
 * 此处我们首先使用vim进行hello.go的编写创建，并使用`go run`查看结果
 
-```
-package main
+	```
+	package main
 
-import "fmt"
+	import "fmt"
 
-func main() {
-    fmt.Printf("hello, world\n")
-}
-```
+	func main() {
+    	fmt.Printf("hello, world\n")
+	}
+	```
 
 * 该源程序中，第一条语句为`包声明`，指明该源文件属于哪个包；第二条则是对`fmt`包的依赖引入；其后则是main函数的编写，内部使用fmt包的标准输出函数`Printf`打印语句。编写完成之后，编译运行该程序。
 ```
