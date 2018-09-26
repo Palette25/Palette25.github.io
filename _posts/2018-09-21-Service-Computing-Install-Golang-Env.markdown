@@ -121,19 +121,19 @@ mv ./${name}.go ../../src/${name}/  # 同上
 echo "OK"
 ```
 
-```go
-// stringutil 包含有用于处理字符串的工具函数。
-package stringutil
+  ```
+  // stringutil 包含有用于处理字符串的工具函数。
+  package stringutil
 
-// Reverse 将其实参字符串以符文为单位左右反转。
-func Reverse(s string) string {
-  r := []rune(s)
-  for i, j := 0, len(r)-1; i < len(r)/2; i, j = i+1, j-1 {
-    r[i], r[j] = r[j], r[i]
+  // Reverse 将其实参字符串以符文为单位左右反转。
+  func Reverse(s string) string {
+    r := []rune(s)
+    for i, j := 0, len(r)-1; i < len(r)/2; i, j = i+1, j-1 {
+      r[i], r[j] = r[j], r[i]
+    }
+    return string(r)
   }
-  return string(r)
-}
-```
+  ```
 
 * 运行makePackage脚本，使用`go build`编译生成对应库文件。执行完成之后即可在其他Go程序中引用该库文件。
 ```bash
@@ -143,22 +143,22 @@ Please input package name: stringutil
 OK
 $ go build $GOPATH/src/stringutil
 ```
-```go
-package main
+  ```
+  package main
 
-import (
-      "fmt"
+  import (
+        "fmt"
 
-      "stringutil"
-)
+        "stringutil"
+  )
 
-func main(){
-      fmt.Printf(stringutil.Reserve("!oG,olleH"));
-}
-```
+  func main(){
+        fmt.Printf(stringutil.Reserve("!oG,olleH"));
+  }
+  ```
 
 * 进行Go源程序的测试过程，使用`go test`命令，创建名为XXX_test.go文件，程序需要`testing`包进行测试添加，约定测试程序内部至少有一个名为TestXXX的函数，接收参数为`*testing.T`类型。
-```go
+```
 package stringutil
 
 import "testing"
@@ -179,10 +179,10 @@ func TestReverse(t *testing.T) {
   }
 }
 ```
-```
-$ go test stringutil
-ok    stringutil 0.165s
-```
+  ```
+  $ go test stringutil
+  ok    stringutil 0.165s
+  ```
 
 
 
