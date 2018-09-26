@@ -70,7 +70,7 @@ $ go env
 #### 2. 创建简单Go程序文件，测试环境
 * 此处我们首先使用vim进行hello.go的编写创建，并使用`go run`查看结果
 
-	```go
+	```
 	package main
 
 	import "fmt"
