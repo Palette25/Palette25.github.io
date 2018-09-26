@@ -159,27 +159,29 @@ $ go build $GOPATH/src/stringutil
   ```
 
 * 进行Go源程序的测试过程，使用`go test`命令，创建名为XXX_test.go文件，程序需要`testing`包进行测试添加，约定测试程序内部至少有一个名为TestXXX的函数，接收参数为`*testing.T`类型。
-```go
-package stringutil
 
-import "testing"
+  ```
+  package stringutil
 
-func TestReverse(t *testing.T) {
-  cases := []struct {
-    in, want string
-  }{
-    {"Hello, world", "dlrow ,olleH"},
-    {"Hello, 世界", "界世 ,olleH"},
-    {"", ""},
-  }
-  for _, c := range cases {
-    got := Reverse(c.in)
-    if got != c.want {
-      t.Errorf("Reverse(%q) == %q, want %q", c.in, got, c.want)
+  import "testing"
+
+  func TestReverse(t *testing.T) {
+    cases := []struct {
+      in, want string
+    }{
+      {"Hello, world", "dlrow ,olleH"},
+      {"Hello, 世界", "界世 ,olleH"},
+      {"", ""},
+    }
+    for _, c := range cases {
+      got := Reverse(c.in)
+      if got != c.want {
+        t.Errorf("Reverse(%q) == %q, want %q", c.in, got, c.want)
+      }
     }
   }
-}
-```
+  ```
+  
   ```
   $ go test stringutil
   ok    stringutil 0.165s
