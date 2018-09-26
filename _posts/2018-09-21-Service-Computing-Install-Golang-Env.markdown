@@ -121,7 +121,7 @@ mv ./${name}.go ../../src/${name}/  # 同上
 echo "OK"
 ```
 
-```
+```go
 // stringutil 包含有用于处理字符串的工具函数。
 package stringutil
 
@@ -144,7 +144,7 @@ OK
 $ go build $GOPATH/src/stringutil
 ```
 
-```
+```go
 package main
 
 import (
@@ -159,7 +159,7 @@ func main(){
 ```
 
 * 进行Go源程序的测试过程，使用`go test`命令，创建名为XXX_test.go文件，程序需要`testing`包进行测试添加，约定测试程序内部至少有一个名为TestXXX的函数，接收参数为`*testing.T`类型。
-```
+```go
 package stringutil
 
 import "testing"
