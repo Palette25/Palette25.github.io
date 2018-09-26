@@ -98,6 +98,92 @@ Hello, World!
 ```
 ![img](/img/ins.png)
 
+* 为了编写并使用Go语言的第一个自定义库，我们需要在对应的src文件夹里面生成对应包名的子文件夹，并将写好的库源程序放入其中。此处为了实现可重用性，使用shell脚本makePackage.sh，目标文件结构为：
+```
+Basic-Go/
+      pratices/
+            *`target-file`.go* (old path of it)
+bin/
+      helloworld.exe
+pkg/
+src/
+      `target-file`/
+            `target-file`.go  (new path of it)
+```
+
+* 编写对应脚本，同时在当前源程序工作空间创建新Go源程序，记得修改对应包名为你所需要的库名(此处以官网`stringutil`示例)。
+```shell
+# 接收文件名
+echo "----------------- Make Package For Go -----------------"
+read -p "Please input package name: " name
+mkdir -p ../../src/${name}   # 此处的生成路径可以更改，因为每个人的目录结构可能不同
+mv ./${name}.go ../../src/${name}/  # 同上
+echo "OK"
+```
+```
+// stringutil 包含有用于处理字符串的工具函数。
+package stringutil
+
+// Reverse 将其实参字符串以符文为单位左右反转。
+func Reverse(s string) string {
+  r := []rune(s)
+  for i, j := 0, len(r)-1; i < len(r)/2; i, j = i+1, j-1 {
+    r[i], r[j] = r[j], r[i]
+  }
+  return string(r)
+}
+```
+
+* 运行makePackage脚本，使用`go build`编译生成对应库文件。执行完成之后即可在其他Go程序中引用该库文件。
+```bash
+$ /bin/sh makePackage.sh
+----------------- Make Package For Go -----------------
+Please input package name: stringutil
+OK
+$ go build $GOPATH/src/stringutil
+```
+```
+package main
+
+import (
+      "fmt"
+
+      "stringutil"
+)
+
+func main(){
+      fmt.Printf(stringutil.Reserve("!oG,olleH"));
+}
+```
+
+* 进行Go源程序的测试过程，使用`go test`命令，创建名为XXX_test.go文件，程序需要`testing`包进行测试添加，约定测试程序内部至少有一个名为TestXXX的函数，接收参数为`*testing.T`类型。
+```
+package stringutil
+
+import "testing"
+
+func TestReverse(t *testing.T) {
+  cases := []struct {
+    in, want string
+  }{
+    {"Hello, world", "dlrow ,olleH"},
+    {"Hello, 世界", "界世 ,olleH"},
+    {"", ""},
+  }
+  for _, c := range cases {
+    got := Reverse(c.in)
+    if got != c.want {
+      t.Errorf("Reverse(%q) == %q, want %q", c.in, got, c.want)
+    }
+  }
+}
+```
+```
+$ go test stringutil
+ok    stringutil 0.165s
+```
+
+
 
 #### 3. 安装Go语言开发所需编辑器
 1. VSCode安装步骤，采用PPA获取vscode依赖包环境，也可以参考vs官网给出的方法[传送门](https://code.visualstudio.com/docs/setup/linux)
