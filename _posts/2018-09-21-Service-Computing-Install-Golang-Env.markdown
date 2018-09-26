@@ -34,35 +34,35 @@ tags:
 ## 实验配置过程
 #### 1. 安装Go语言环境
 * 开启VirtualBox虚拟机，在Win10宿主机上使用ssh连接Ubuntu私有云，开始命令行操作。首先，我们需要获取Golang的依赖包，之后直接执行安装，命令如下：
-```
+```bash
 $ sudo apt-get install golang-go
 ```
 * 执行完该条语句之后，Ubuntu 16.04系统中go环境依赖包会默认安装在路径：`/usr/lib/go`，不然则使用rpm查看安装路径：
-```
+```bash
 $ rpm -ql golang-go |more
 ```
 
 * 设置GoPath路径值
 为了保证Go语言正常进行保存，运行等操作，我们需要设置其环境变量值，其中最重要的即设置GoPath值(放置Go源程序路径)，GoRoot值(Go安装环境根路径)
 1. 创建Go代码文件存储路径，当然如果你想更改存储文件名，或者直接修改存储位置也是可以的
-```
+```bash
 $ mkdir $HOME/gowork
 ```
 2. 第二步打开系统路径设置文件bashrc，记得使用sudo命令进入管理员身份
-```
+```bash
 $ sudo vim ~/.bashrc
 ```
 3. 最后设置GOPATH环境变量值，路径值填入第一步创建的文件名
-```
+```bash
 export GOPATH="$HOME/gowork"
 export GOROOT="/usr/lib/go"
 ```
 4. 执行配置
-```
+```bash
 $ source ~/.bashrc
 ```
 5. 检查Go环境配置情况，如果GOPATH，GOROOT值正确，则配置成功
-```
+```bash
 $ go env
 ```
 
@@ -70,7 +70,7 @@ $ go env
 #### 2. 创建简单Go程序文件，测试环境
 * 此处我们首先使用vim进行hello.go的编写创建，并使用`go run`查看结果
 
-	```
+	```go
 	package main
 
 	import "fmt"
@@ -81,7 +81,7 @@ $ go env
 	```
 
 * 该源程序中，第一条语句为`包声明`，指明该源文件属于哪个包；第二条则是对`fmt`包的依赖引入；其后则是main函数的编写，内部使用fmt包的标准输出函数`Printf`打印语句。编写完成之后，编译运行该程序。
-```
+```bash
 $ go run hello.go
 hello, world
 ```
@@ -89,7 +89,7 @@ hello, world
 
 #### 3. 安装Go语言开发所需编辑器
 1. VSCode安装步骤，采用PPA获取vscode依赖包环境，也可以参考vs官网给出的方法[传送门](https://code.visualstudio.com/docs/setup/linux)
-```
+```bash
 $ sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
 $ sudo apt-get update
 $ sudo apt-get install ubuntu-make
@@ -97,7 +97,7 @@ $ sudo umake web visual-studio-code
 ```
 
 2. Sublime Text3安装步骤，同样用了PPA
-```
+```bash
 $ sudo add-apt-repository ppa:webupd8team/sublime-text-3 
 $ sudo apt-get update   #更新可用软件库
 $ sudo apt-get install sublime-text-installer   #安装Sublime Text 3
@@ -106,11 +106,11 @@ $ sudo apt-get install sublime-text-installer   #安装Sublime Text 3
 3. 以上两种编辑器皆为非原生编辑器，首次使用时在图形化桌面搜索关键字打开并锁定到桌面，或者直接到安装路径打开即可。
 接下来介绍Linux系统原生编辑器`vim`的配置。
 * 打开vim配置文件
-```
+```bash
 $ sudo vim /etc/vim/vimrc
 ```
 * 配置所需功能
-```
+```bash
 set tabstop=4         #Tab宽度为4
 set nobackup          #禁止生成临时文件
 set cursorline        #突出显示当前行
@@ -127,32 +127,32 @@ inoremap " ""<ESC>i   #双引号补全
 inoremap ( ()<ESC>i   #括号补全
 ```
 * 执行修改
-```
+```bash
 $ source /etc/vim/vimrc
 ```
 
 
 #### 4. 安装必要的工具和插件
 * 安装Git客户端
-```
+```bash
 $ sudo apt-get install git
 ```
 
 * 配置VSCode所需工具
 1. 首次进入VSCode使用界面，会提示需要安装Go开发插件，但是无法翻墙的小伙伴是安装不了的，所以需要在github上拉下来安装。
-```
+```bash
 $ mkdir $GOROOT/src/golang.org/x/
 $ go get -d github.com/golang/tools
 $ cp $GOROOT/src/github.com/golang/tools $GOROOT/src/golang.org/x/ -rf
 ```
 2. 安装所需工具包(上述shell命令之所以使用$GOROOT，是因为下述安装过程依赖于许多Go程序包，它们并非在$GOPATH上)
-```
+```bash
 $ go install golang.org/x/tools/go/buildutil
 ```
 3. 重启VSCode，按照步骤安装插件，完成。
 
 * 安装运行go tour
-```
+```bash
 $ go get github.com/Go-zh/tour/gotour
 $ go tour
 ```
