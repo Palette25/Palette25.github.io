@@ -143,7 +143,6 @@ Please input package name: stringutil
 OK
 $ go build $GOPATH/src/stringutil
 ```
-
 ```go
 package main
 
@@ -180,7 +179,6 @@ func TestReverse(t *testing.T) {
   }
 }
 ```
-
 ```
 $ go test stringutil
 ok    stringutil 0.165s
