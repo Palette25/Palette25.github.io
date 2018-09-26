@@ -65,6 +65,7 @@ $ source ~/.bashrc
 ```bash
 $ go env
 ```
+![img](/img/env.png)
 
 
 #### 2. 创建简单Go程序文件，测试环境
@@ -88,6 +89,14 @@ hello, world
 
 * 也可以使用`go build`产生可执行的exe文件。
 ![img](/img/tk.png)
+
+* 同时使用`go install`可以指定在`$GOPATH`和`$GOROOT`下的某个文件夹内的go源程序包的安装，完成之后即到对应的`bin`文件夹内部访问。
+```bash
+$ go install github.com/golang
+$ $GOPATH/bin/golang
+Hello, World!
+```
+![img](/img/ins.png)
 
 
 #### 3. 安装Go语言开发所需编辑器
@@ -113,7 +122,7 @@ $ sudo apt-get install sublime-text-installer   #安装Sublime Text 3
 $ sudo vim /etc/vim/vimrc
 ```
 * 配置所需功能
-```bash
+```
 set tabstop=4         #Tab宽度为4
 set nobackup          #禁止生成临时文件
 set cursorline        #突出显示当前行
@@ -141,6 +150,12 @@ $ source /etc/vim/vimrc
 $ sudo apt-get install git
 ```
 
+* 设置Git常用账户信息
+```bash
+$ git config --global user.name `your-user-name`
+$ git config --global user.email `your-email`
+```
+
 * 配置VSCode所需工具
 1. 首次进入VSCode使用界面，会提示需要安装Go开发插件，但是无法翻墙的小伙伴是安装不了的，所以需要在github上拉下来安装。
 ```bash
@@ -161,6 +176,8 @@ $ go tour
 ```
 
 #### 5. Go语言开发所需文档资料
+* [Git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+
 * [Go语言菜鸟教程](http://www.runoob.com/go/go-tutorial.html)
 
 * [Go语言之旅](https://github.com/Go-zh/tour)
