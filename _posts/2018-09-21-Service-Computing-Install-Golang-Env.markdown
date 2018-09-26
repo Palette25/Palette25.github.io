@@ -86,6 +86,9 @@ $ go run hello.go
 hello, world
 ```
 
+* 也可以使用`go build`产生可执行的exe文件。
+![img](/img/tk.png)
+
 
 #### 3. 安装Go语言开发所需编辑器
 1. VSCode安装步骤，采用PPA获取vscode依赖包环境，也可以参考vs官网给出的方法[传送门](https://code.visualstudio.com/docs/setup/linux)
