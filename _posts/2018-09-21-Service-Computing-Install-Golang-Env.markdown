@@ -156,6 +156,15 @@ $ git config --global user.name `your-user-name`
 $ git config --global user.email `your-email`
 ```
 
+* Git查看当前文件夹状态，添加改动，上传，以及提交
+```bash
+$ git status
+$ git add .  #此步根据需要更改添加路径
+$ git commit -m 'Change'  ##此步根据需要修改上传信息
+$ git push `your-remote-repo-name` master
+```
+![img](/img/ff.png)
+
 * 配置VSCode所需工具
 1. 首次进入VSCode使用界面，会提示需要安装Go开发插件，但是无法翻墙的小伙伴是安装不了的，所以需要在github上拉下来安装。
 ```bash
