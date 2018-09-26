@@ -120,6 +120,7 @@ mkdir -p ../../src/${name}   # 此处的生成路径可以更改，因为每个�
 mv ./${name}.go ../../src/${name}/  # 同上
 echo "OK"
 ```
+
 ```
 // stringutil 包含有用于处理字符串的工具函数。
 package stringutil
@@ -142,6 +143,7 @@ Please input package name: stringutil
 OK
 $ go build $GOPATH/src/stringutil
 ```
+
 ```
 package main
 
@@ -178,6 +180,7 @@ func TestReverse(t *testing.T) {
   }
 }
 ```
+
 ```
 $ go test stringutil
 ok    stringutil 0.165s
