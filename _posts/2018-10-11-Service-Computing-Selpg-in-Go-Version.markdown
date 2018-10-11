@@ -48,7 +48,6 @@ func Command(name1 string, name2 string, ......string) *Cmd
 func (c *Cmd) StderrPipe()(io.ReaderCloser, error)
 func (c *Cmd) Run() error
 func (c *Cmd) Wait() error 
-
 // io包内的相关函数
 func Pipe() (*PipeReader, *PupeWriter)
 func Copy(dst Writer, src Reader) (write int64, err error)
