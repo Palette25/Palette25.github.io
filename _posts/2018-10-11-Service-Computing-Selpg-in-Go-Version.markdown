@@ -151,6 +151,11 @@ selpg-go -s1 -e2 -l1 -dpl ../test.txt
 2. 运行上述shell文件，得到以下测试结果，经检验结果均正确。
 ![img](/img/res1.jpg)
 
+## 相关链接
+* [Selpg-Go的Github代码仓库](https://github.com/Palette25/Selpg-Go)
+
+* [同队队员采用Cobra实现的selpg-go](https://blog.chenmt.science/2018/10/11/go-%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7-selpg/)
+
 <div id="container"></div>
 <link rel="stylesheet" href="https://imsun.GitHub.io/gitment/style/default.css">
 <script src="https://imsun.GitHub.io/gitment/dist/gitment.browser.js"></script>
