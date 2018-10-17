@@ -4,7 +4,7 @@ title:    "LeetCode 316 - Remove Duplicate Letters"
 subtitle: " \"For Algorithm Course\""
 date:     2018-10-17
 author:   "Palette"
-header-img: "img/birds.jpg"
+header-img: "img/seai.jpg"
 catalog: true
 tags:
     - C++
