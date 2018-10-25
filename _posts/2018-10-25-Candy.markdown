@@ -1,0 +1,119 @@
+---
+layout:   post
+title:    "LeetCode 135 - Candy"
+subtitle: " \"For Algorithm Course\""
+date:     2018-10-25
+author:   "Palette"
+header-img: "img/doc.jpg"
+catalog: true
+tags:
+    - C++
+    - LeetCode
+    - Greedy Algorithm
+    - Programming
+---
+## LeetCode题解(八) - Candy
+### 题目难度：`Hard`
+### 题目地址：[No.135 Candy](https://leetcode.com/problems/candy/description/)
+### 题目描述：
+```
+There are N children standing in a line. Each child is assigned a rating value.
+
+You are giving candies to these children subjected to the following requirements:
+* Each child must have at least one candy.
+* Children with a higher rating get more candies than their neighbors.
+
+What is the minimum candies you must give?
+
+Example 1:
+
+Input: [1,0,2]
+Output: 5
+Explanation: You can allocate to the first, second and third child with 2, 1, 2 candies respectively.
+
+Example 2:
+
+Input: [1,2,2]
+Output: 4
+Explanation: You can allocate to the first, second and third child with 1, 2, 1 candies respectively.
+             The third child gets 1 candy because it satisfies the above two conditions.
+```
+
+### 题目思路：
+1. 本题也是一道典型的贪心算法题。题目的主要意思为：给定输入为每个`child`的`rating`，现在要求你根据每个人的`rating`，给所有的孩子发放糖果，并且每个孩子必须获得至少一颗糖果，同时每个孩子i的邻居中，等级`rating`比自身高的孩子j，必须拿到比对应孩子i还多的糖果，要求输出最少需要消耗的总糖果数。
+
+2. 实际上本题可以通过时间复杂度为O(n)的顺序遍历实现贪心算法，初始化下标为0的孩子所获得的糖果数为1，且从下标为1开始遍历至数组末尾。初始条件设置完毕，借来需要考虑实现的三种情况：
+	* 当前下标对应`rating` > 上一下标对应`rating`，此种情况简单，只需要将当前孩子所获得的Candy数量设置为上一孩子Candy数量+1即可。
+	* 当前下标对应`rating` == 上一下标对应`rating`，此种情况也简单，规则中没有要求相同`rating`需要设置为多少，此时贪心策略要求我们将其Candy数量设置为1。
+	* 当前下标对应`rating` < 上一下标对应`rating`，此种情况较为复杂，涉及到递减序列的长度产生，以及对序列之中的元素糖果数量的修正。
+
+3. 此处单独划分空间来讨论递减序列的处理方法，也算是本算法最为核心的部分。每次我们检测此处到比上一`rating`还小，实际上就必须将递减序列增加一个元素。考虑到空间与时间简化，我们不设置存储序列，单单使用递减序列长度，递减序列之前一位元素的Candy数，来表示生成的序列。每次进入递减状态，即将递减序列长度加一，同时在非递减状态保留递减序列之前一位元素的Candy数`prevDecCount`，该数值必须与当前递减序列长度进行比较，来决定是否需要进行糖果数量修正(控制每一位同学的糖果数大于等于1)。
+
+
+### 代码实现：
+复杂度分析：时间复杂度O(n), 空间复杂度O(1)
+```
+class Solution {
+public:
+    int candy(vector<int>& ratings) {
+        int result = 0, decLength = 0, prevCount = 1, prevDecCount = 1;
+        if(ratings.size() > 0){
+            result = 1; // Initializing first candy num with 1
+            for(int i=0; i<ratings.size()-1; i++){
+                if(ratings[i+1] < ratings[i]){
+                    ++decLength; // Adding decrease sequence length
+                    if(prevDecCount <= decLength){
+                        ++result;
+                    }
+                    result += decLength; // Justify prev candy count
+                    prevCount = 1; // Once we leave decrease sequence, the prev count must be 1
+                }else {
+                    decLength = 0;
+                    if(ratings[i+1] == ratings[i]){
+                        ++result;
+                        prevCount = 1;
+                    }else {
+                        prevCount += 1;
+                        result += prevCount;
+                    }
+                    prevDecCount = prevCount;
+                }
+            }
+        }
+        return result;
+    }
+};
+```
+
+### 运行结果：
+![img](candy1.png)
+
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.GitHub.io/gitment/style/default.css">
+<script src="https://imsun.GitHub.io/gitment/dist/gitment.browser.js"></script>
+<script>
+  const myTheme = {
+  render(state, instance) {
+    const container = document.createElement('div')
+    container.lang = "en-US"
+    container.className = 'gitment-container gitment-root-container'
+    container.appendChild(instance.renderHeader(state, instance))
+    container.appendChild(instance.renderEditor(state, instance))
+    container.appendChild(instance.renderComments(state, instance))
+    container.appendChild(instance.renderFooter(state, instance))
+    return container
+  },
+}
+
+var gitment = new Gitment({
+  id: '<%= page.date %>',
+  owner: 'Palette25',
+  repo: 'Comments',
+  oauth: {
+    client_id: 'a1ac2783392c3eef32c1',
+    client_secret: 'ea8605a4a85131c5012ba8f200f87702e15a05b0',
+  },
+  theme: myTheme,
+})
+gitment.render('container')
+</script>
