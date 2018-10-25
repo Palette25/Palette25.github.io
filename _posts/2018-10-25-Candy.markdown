@@ -86,7 +86,7 @@ public:
 ```
 
 ### 运行结果：
-![img](candy1.png)
+![img](/img/candy1.png)
 
 <div id="container"></div>
 <link rel="stylesheet" href="https://imsun.GitHub.io/gitment/style/default.css">
