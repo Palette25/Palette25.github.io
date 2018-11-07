@@ -4,7 +4,7 @@ title:    "LeetCode 87 - Scramble String"
 subtitle: " \"For Algorithm Course\""
 date:     2018-11-07
 author:   "Palette"
-header-img: "img/red.jpg"
+header-img: "img/museum.jpg"
 catalog: true
 tags:
     - C++
