@@ -17,14 +17,14 @@ tags:
 ## Golang net/http源码分析和功能介绍
 
 ### 一、net/http库实现http服务器的构建流程
-1. 一般来说，一个能够正常进行工作的http服务器需要实现以下的工作流程：
+#### 一般来说，一个能够正常进行工作的http服务器需要实现以下的工作流程：
 * 在当前主机上的某个端口开启监听程序(Socket)，等待客户端的请求发起。
 * 当客户端请求到来之时，接收该客户端的请求。
 * 处理客户端请求，并返回相应的`Response`报文。
 
 
-2. 使用Go语言建立http服务器流程大致为：创建 ServerSocket，绑定并 listen，accept 连接，创建 go 线程服务一个连接。
-* 监听主机上的某个端口，开启`listen`行为的函数是`http.ListenAndServe`，该函数是Go创建服务器的入口，源码定义如下：
+#### 使用Go语言建立http服务器流程大致为：创建 ServerSocket，绑定并 listen，accept 连接，创建 go 线程服务一个连接。
+##### 监听主机上的某个端口，开启`listen`行为
 ```
 // ListenAndServe listens on the TCP network address addr
 // and then calls Serve with handler to handle requests
@@ -39,7 +39,9 @@ func ListenAndServe(addr string, handler Handler) error {
 }
 ```
 分析：该函数首先使用输入的端口号，以及处理函数`Handler`创建Server对象，然后调用Server对象的`ListenAndServer`方法，开启端口监听。
-* Server对象的`ListenAndServer`函数方法定义
+
+
+##### Server对象的`ListenAndServer`函数方法定义
 ```
 // ListenAndServe listens on the TCP network address srv.Addr and then
 // calls Serve to handle requests on incoming connections.
@@ -59,7 +61,9 @@ func (srv *Server) ListenAndServe() error {
 }
 ```
 分析：方法检测Server结构体内部的端口地址，若没有设置则赋值为`http`模式(即80端口监听模式)。紧接着调用`net`包内部的`Listen(string, string)`函数，调用TCP协议搭建底层服务，并且返回相应的`Listener`接口。最终根据该`Listener`接口`ln`，使用接口断言语法`var.(type)`转换为类型`*net.TCPListener`的结构体实例，通过该实例创建固定时间内保持TCP连接的`tcpKeepAliveListener`实例，调用Server结构体的`Server`函数监听客户端传来的数据。
-* 补充：`Listener`接口定义
+
+
+##### 补充：`Listener`接口定义
 ```
 // A Listener is a generic network listener for stream-oriented protocols.
 //
@@ -77,7 +81,9 @@ type Listener interface {
 }
 ```
 分析：接口内部定义方法`Accept()`, `Close()`, `Addr()`，分别用于建立新连接并返回给`Listener`，关闭当前连接，以及返回接口当前所对应的网络地址。该接口定义了泛型的面向流传输协议的网络监听器，内部构建轻巧应用范围广。
-* 接收`Accept`客户端请求
+
+
+##### 接收`Accept`客户端请求
 ```
 // Serve accepts incoming connections on the Listener l, creating a
 // new service goroutine for each. The service goroutines read requests and
@@ -137,7 +143,9 @@ func (srv *Server) Serve(l net.Listener) error {
 }
 ```
 分析：`Server`结构体方法`Serve`接收上文创建完成的，基于TCP协议的监听器接口`net.Listener`。本函数采取无限循环`for{}`，在循环体内部不断接听客户端发来的请求，并且调用接口函数`Accpet()`接收请求，经由错误处理语句检测，检查无误之后，将请求信息`rw`赋值给当前`Server`结构体函数`newConn()`，创建新连接`c`，并且开启新线程`goroutine`，通过当前上下文信息，调用新连接的`serve`函数，执行处理客户端请求信息的功能。
-* 补充：`newConn()`函数定义
+
+
+##### 补充：`newConn()`函数定义
 ```
 // Create new connection from rwc.
 func (srv *Server) newConn(rwc net.Conn) *conn {
@@ -152,7 +160,9 @@ func (srv *Server) newConn(rwc net.Conn) *conn {
 }
 ```
 分析：本函数创建与当前`Server`结构体内部连接内容相同的新连接，用于处理客户端请求。
-* 创建go线程，运行新连接`serve`方法处理客户端请求，并返回响应报文
+
+
+##### 创建go线程，运行新连接`serve`方法处理客户端请求，并返回响应报文
 ```
 // Serve a new connection.
 func (c *conn) serve(ctx context.Context) {
@@ -248,8 +258,6 @@ type muxEntry struct {
 }
 ```
 分析：首先`ServerMux`内部含有用于同步操作的RW锁成员`mu`，其次成员`m`为`map(string -> muxEntry)`，使一个用于记录请求path与相应的`Handler`对应关系的map对象。此处还有`es`成员，是一个`muxEntry`切片，此处注释提醒我们改切片通过`pattern`匹配路径长度进行最长到最短的排序，排序的目的是为了在进行路由URL匹配时能够匹配到最接近的`Handler`(精确匹配到符合条件路由)。最后一个成员说明匹配路径是否包含`hostname`。
-
-
 2. 通过`ServeMux`实例进行路径匹配函数调用，接收相关路径，返回对应的处理函数
 ```
 // Find a handler on a handler map given a path string.
