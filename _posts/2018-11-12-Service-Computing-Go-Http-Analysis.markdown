@@ -30,12 +30,11 @@ tags:
 // and then calls Serve with handler to handle requests
 // on incoming connections.
 // Accepted connections are configured to enable TCP keep-alives.
-// Handler is typically nil, in which case the DefaultServeMux is
-// used.
+// Handler is typically nil, in which case the DefaultServeMux is used.
 // ListenAndServe always returns a non-nil error.
 func ListenAndServe(addr string, handler Handler) error {
-    server := &Server{Addr: addr, Handler: handler}
-    return server.ListenAndServe()
+	server := &Server{Addr: addr, Handler: handler}
+	return server.ListenAndServe()
 }
 ```
 分析：该函数首先使用输入的端口号，以及处理函数`Handler`创建Server对象，然后调用Server对象的`ListenAndServer`方法，开启端口监听。
@@ -259,24 +258,26 @@ type muxEntry struct {
 ```
 分析：首先`ServerMux`内部含有用于同步操作的RW锁成员`mu`，其次成员`m`为`map(string -> muxEntry)`，使一个用于记录请求path与相应的`Handler`对应关系的map对象。此处还有`es`成员，是一个`muxEntry`切片，此处注释提醒我们改切片通过`pattern`匹配路径长度进行最长到最短的排序，排序的目的是为了在进行路由URL匹配时能够匹配到最接近的`Handler`(精确匹配到符合条件路由)。最后一个成员说明匹配路径是否包含`hostname`。
 
+![img](/img/go-net.png)
+
 ##### 通过`ServeMux`实例进行路径匹配函数调用，接收相关路径，返回对应的处理函数
 ```
 // Find a handler on a handler map given a path string.
 // Most-specific (longest) pattern wins.
 func (mux *ServeMux) match(path string) (h Handler, pattern string) {
-    // Check for exact match first.
-    v, ok := mux.m[path]
-    if ok {
-        return v.h, v.pattern
-    }
-    // Check for longest valid match.  mux.es contains all patterns
-    // that end in / sorted from longest to shortest.
-    for _, e := range mux.es {
-        if strings.HasPrefix(path, e.pattern) {
-            return e.h, e.pattern
-        }
-    }
-    return nil, ""
+	// Check for exact match first.
+	v, ok := mux.m[path]
+	if ok {
+		return v.h, v.pattern
+	}
+	// Check for longest valid match.  mux.es contains all patterns
+	// that end in / sorted from longest to shortest.
+	for _, e := range mux.es {
+	    if strings.HasPrefix(path, e.pattern) {
+	        return e.h, e.pattern
+	    }
+	}
+	return nil, ""
 }
 ```
 分析：此处首先利用`map`成员进行初次匹配，输入路径字符串马上搜索到对应的muxEntry对象并返回其内容。其次，若出现错误，那么进行二次匹配，遍历当前所有muxEntry切片，对元素进行前缀匹配`strings.HasPrefix(path, e.pattern)`，返回相应结果。
