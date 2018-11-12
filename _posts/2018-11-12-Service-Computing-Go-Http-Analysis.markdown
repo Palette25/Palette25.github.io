@@ -239,7 +239,7 @@ func (c *conn) serve(ctx context.Context) {
 2. `serverHandler{c.server}.ServeHTTP(w, w.req)`，通过传入当前连接的`server`成员，创建`serverHandler`结构体，同时调用其`ServerHTTP()`方法，首先对客户端URL进行解析跳转到不同的处理函数，再对前面解析的请求信息进行处理。
 3. `w.finishRequest()`完成处理请求过程，返回相应的`Response`报文。
 
-
+![img](/img/go-net.png)
 
 ### 二、 细节阅读 -- net/http库ServeMux解读
 ##### 基于HTTP请求的路由管理器`ServeMux`，匹配不同请求的不同URL，进行不同`Handler`映射
@@ -257,8 +257,6 @@ type muxEntry struct {
 }
 ```
 分析：首先`ServerMux`内部含有用于同步操作的RW锁成员`mu`，其次成员`m`为`map(string -> muxEntry)`，使一个用于记录请求path与相应的`Handler`对应关系的map对象。此处还有`es`成员，是一个`muxEntry`切片，此处注释提醒我们改切片通过`pattern`匹配路径长度进行最长到最短的排序，排序的目的是为了在进行路由URL匹配时能够匹配到最接近的`Handler`(精确匹配到符合条件路由)。最后一个成员说明匹配路径是否包含`hostname`。
-
-![img](/img/go-net.png)
 
 ##### 通过`ServeMux`实例进行路径匹配函数调用，接收相关路径，返回对应的处理函数
 ```
