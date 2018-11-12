@@ -34,8 +34,8 @@ tags:
 // used.
 // ListenAndServe always returns a non-nil error.
 func ListenAndServe(addr string, handler Handler) error {
-	server := &Server{Addr: addr, Handler: handler}
-	return server.ListenAndServe()
+    server := &Server{Addr: addr, Handler: handler}
+    return server.ListenAndServe()
 }
 ```
 分析：该函数首先使用输入的端口号，以及处理函数`Handler`创建Server对象，然后调用Server对象的`ListenAndServer`方法，开启端口监听。
@@ -236,14 +236,14 @@ func (c *conn) serve(ctx context.Context) {
 		....
 ```
 分析：上述代码篇幅较长，此处为了简化分析，只提取核心操作进行解读。
-	1. `w, err := c.readRequest(ctx)`，基于当前上下文对象，取出连接实例中相应的请求信息`w`。
-	2. `serverHandler{c.server}.ServeHTTP(w, w.req)`，通过传入当前连接的`server`成员，创建`serverHandler`结构体，同时调用其`ServerHTTP()`方法，首先对客户端URL进行解析跳转到不同的处理函数，再对前面解析的请求信息进行处理。
-	3. `w.finishRequest()`完成处理请求过程，返回相应的`Response`报文。
+1. `w, err := c.readRequest(ctx)`，基于当前上下文对象，取出连接实例中相应的请求信息`w`。
+2. `serverHandler{c.server}.ServeHTTP(w, w.req)`，通过传入当前连接的`server`成员，创建`serverHandler`结构体，同时调用其`ServerHTTP()`方法，首先对客户端URL进行解析跳转到不同的处理函数，再对前面解析的请求信息进行处理。
+3. `w.finishRequest()`完成处理请求过程，返回相应的`Response`报文。
 
 
 
 ### 二、 细节阅读 -- net/http库ServeMux解读
-##### `ServeMux`，一个基于HTTP请求的路由管理器，匹配不同请求的不同URL，进行不同`Handler`映射
+##### 基于HTTP请求的路由管理器`ServeMux`，匹配不同请求的不同URL，进行不同`Handler`映射
 ```
 type ServeMux struct {
 	mu    sync.RWMutex
@@ -264,20 +264,19 @@ type muxEntry struct {
 // Find a handler on a handler map given a path string.
 // Most-specific (longest) pattern wins.
 func (mux *ServeMux) match(path string) (h Handler, pattern string) {
-	// Check for exact match first.
-	v, ok := mux.m[path]
-	if ok {
-		return v.h, v.pattern
-	}
-
-	// Check for longest valid match.  mux.es contains all patterns
-	// that end in / sorted from longest to shortest.
-	for _, e := range mux.es {
-		if strings.HasPrefix(path, e.pattern) {
-			return e.h, e.pattern
-		}
-	}
-	return nil, ""
+    // Check for exact match first.
+    v, ok := mux.m[path]
+    if ok {
+        return v.h, v.pattern
+    }
+    // Check for longest valid match.  mux.es contains all patterns
+    // that end in / sorted from longest to shortest.
+    for _, e := range mux.es {
+        if strings.HasPrefix(path, e.pattern) {
+            return e.h, e.pattern
+        }
+    }
+    return nil, ""
 }
 ```
 分析：此处首先利用`map`成员进行初次匹配，输入路径字符串马上搜索到对应的muxEntry对象并返回其内容。其次，若出现错误，那么进行二次匹配，遍历当前所有muxEntry切片，对元素进行前缀匹配`strings.HasPrefix(path, e.pattern)`，返回相应结果。
