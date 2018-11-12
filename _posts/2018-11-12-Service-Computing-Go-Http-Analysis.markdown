@@ -39,8 +39,6 @@ func ListenAndServe(addr string, handler Handler) error {
 }
 ```
 分析：该函数首先使用输入的端口号，以及处理函数`Handler`创建Server对象，然后调用Server对象的`ListenAndServer`方法，开启端口监听。
-
-
 * Server对象的`ListenAndServer`函数方法定义
 ```
 // ListenAndServe listens on the TCP network address srv.Addr and then
@@ -61,8 +59,6 @@ func (srv *Server) ListenAndServe() error {
 }
 ```
 分析：方法检测Server结构体内部的端口地址，若没有设置则赋值为`http`模式(即80端口监听模式)。紧接着调用`net`包内部的`Listen(string, string)`函数，调用TCP协议搭建底层服务，并且返回相应的`Listener`接口。最终根据该`Listener`接口`ln`，使用接口断言语法`var.(type)`转换为类型`*net.TCPListener`的结构体实例，通过该实例创建固定时间内保持TCP连接的`tcpKeepAliveListener`实例，调用Server结构体的`Server`函数监听客户端传来的数据。
-
-
 * 补充：`Listener`接口定义
 ```
 // A Listener is a generic network listener for stream-oriented protocols.
@@ -81,8 +77,6 @@ type Listener interface {
 }
 ```
 分析：接口内部定义方法`Accept()`, `Close()`, `Addr()`，分别用于建立新连接并返回给`Listener`，关闭当前连接，以及返回接口当前所对应的网络地址。该接口定义了泛型的面向流传输协议的网络监听器，内部构建轻巧应用范围广。
-
-
 * 接收`Accept`客户端请求
 ```
 // Serve accepts incoming connections on the Listener l, creating a
@@ -143,8 +137,6 @@ func (srv *Server) Serve(l net.Listener) error {
 }
 ```
 分析：`Server`结构体方法`Serve`接收上文创建完成的，基于TCP协议的监听器接口`net.Listener`。本函数采取无限循环`for{}`，在循环体内部不断接听客户端发来的请求，并且调用接口函数`Accpet()`接收请求，经由错误处理语句检测，检查无误之后，将请求信息`rw`赋值给当前`Server`结构体函数`newConn()`，创建新连接`c`，并且开启新线程`goroutine`，通过当前上下文信息，调用新连接的`serve`函数，执行处理客户端请求信息的功能。
-
-
 * 补充：`newConn()`函数定义
 ```
 // Create new connection from rwc.
@@ -160,8 +152,6 @@ func (srv *Server) newConn(rwc net.Conn) *conn {
 }
 ```
 分析：本函数创建与当前`Server`结构体内部连接内容相同的新连接，用于处理客户端请求。
-
-
 * 创建go线程，运行新连接`serve`方法处理客户端请求，并返回响应报文
 ```
 // Serve a new connection.
@@ -236,9 +226,9 @@ func (c *conn) serve(ctx context.Context) {
 		....
 ```
 分析：上述代码篇幅较长，此处为了简化分析，只提取核心操作进行解读。
-1. `w, err := c.readRequest(ctx)`，基于当前上下文对象，取出连接实例中相应的请求信息`w`。
-2. `serverHandler{c.server}.ServeHTTP(w, w.req)`，通过传入当前连接的`server`成员，创建`serverHandler`结构体，同时调用其`ServerHTTP()`方法，首先对客户端URL进行解析跳转到不同的处理函数，再对前面解析的请求信息进行处理。
-3. `w.finishRequest()`完成处理请求过程，返回相应的`Response`报文。
+	1. `w, err := c.readRequest(ctx)`，基于当前上下文对象，取出连接实例中相应的请求信息`w`。
+	2. `serverHandler{c.server}.ServeHTTP(w, w.req)`，通过传入当前连接的`server`成员，创建`serverHandler`结构体，同时调用其`ServerHTTP()`方法，首先对客户端URL进行解析跳转到不同的处理函数，再对前面解析的请求信息进行处理。
+	3. `w.finishRequest()`完成处理请求过程，返回相应的`Response`报文。
 
 
 
