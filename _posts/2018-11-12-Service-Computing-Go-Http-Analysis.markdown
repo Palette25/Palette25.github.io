@@ -14,12 +14,15 @@ tags:
 
 > Read source codes makes you better programming skills....
 
-# Golang net/http源码分析和功能介绍
+## Golang net/http源码分析和功能介绍
 
-## 一、net/http库实现http服务器的构建流程
+### 一、net/http库实现http服务器的构建流程
 1. 一般来说，一个能够正常进行工作的http服务器需要实现以下的工作流程：
+
 * 在当前主机上的某个端口开启监听程序(Socket)，等待客户端的请求发起。
+
 * 当客户端请求到来之时，接收该客户端的请求。
+
 * 处理客户端请求，并返回相应的`Response`报文。
 
 
