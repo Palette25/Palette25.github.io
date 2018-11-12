@@ -34,8 +34,8 @@ tags:
 // used.
 // ListenAndServe always returns a non-nil error.
 func ListenAndServe(addr string, handler Handler) error {
-  server := &Server{Addr: addr, Handler: handler}
-  return server.ListenAndServe()
+	server := &Server{Addr: addr, Handler: handler}
+	return server.ListenAndServe()
 }
 ```
 分析：该函数首先使用输入的端口号，以及处理函数`Handler`创建Server对象，然后调用Server对象的`ListenAndServer`方法，开启端口监听。
@@ -243,7 +243,7 @@ func (c *conn) serve(ctx context.Context) {
 
 
 ### 二、 细节阅读 -- net/http库ServeMux解读
-1. `ServeMux`是一个基于HTTP请求的路由管理器，通过匹配不同请求的不同URL，调用不同的`Handler`进行请求处理功能(映射过程)。Go源码定义如下：
+##### `ServeMux`，一个基于HTTP请求的路由管理器，匹配不同请求的不同URL，进行不同`Handler`映射
 ```
 type ServeMux struct {
 	mu    sync.RWMutex
@@ -258,7 +258,8 @@ type muxEntry struct {
 }
 ```
 分析：首先`ServerMux`内部含有用于同步操作的RW锁成员`mu`，其次成员`m`为`map(string -> muxEntry)`，使一个用于记录请求path与相应的`Handler`对应关系的map对象。此处还有`es`成员，是一个`muxEntry`切片，此处注释提醒我们改切片通过`pattern`匹配路径长度进行最长到最短的排序，排序的目的是为了在进行路由URL匹配时能够匹配到最接近的`Handler`(精确匹配到符合条件路由)。最后一个成员说明匹配路径是否包含`hostname`。
-2. 通过`ServeMux`实例进行路径匹配函数调用，接收相关路径，返回对应的处理函数
+
+##### 通过`ServeMux`实例进行路径匹配函数调用，接收相关路径，返回对应的处理函数
 ```
 // Find a handler on a handler map given a path string.
 // Most-specific (longest) pattern wins.
