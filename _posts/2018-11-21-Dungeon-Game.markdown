@@ -4,7 +4,7 @@ title:    "LeetCode 174 - Dungeon Game"
 subtitle: " \"For Algorithm Course\""
 date:     2018-11-21
 author:   "Palette"
-header-img: "img/plane.jpg"
+header-img: "img/light.jpg"
 catalog: true
 tags:
     - C++
