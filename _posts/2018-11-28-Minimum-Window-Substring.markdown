@@ -1,10 +1,10 @@
 ---
 layout:   post
-title:    "LeetCode 174 - Dungeon Game"
+title:    "LeetCode 76 - Minimum Window Substring"
 subtitle: " \"For Algorithm Course\""
-date:     2018-11-21
+date:     2018-11-28
 author:   "Palette"
-header-img: "img/light.jpg"
+header-img: "img/noon.jpg"
 catalog: true
 tags:
     - C++
