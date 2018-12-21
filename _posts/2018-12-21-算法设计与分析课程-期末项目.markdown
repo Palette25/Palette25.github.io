@@ -77,7 +77,7 @@ tags:
    #include <algorithm>
 
    #include <string>
-      
+
    #include <windows.h>
 
    using namespace std;
@@ -233,7 +233,7 @@ tags:
 
    贪心算法测试结果：
 
-   ![img](/img/GreedyAlgorithm.png)
+   ![img](/img/GreedyAlgorithm1.png)
    贪心算法求解具体结果：
 
    p1
@@ -683,14 +683,23 @@ tags:
    * TabuSearch.h -- Use Tabu Search to solve CFL Problem
    */
    #ifndef TABU_SEARCH_H
+
    #define TABU_SEARCH_H
+
    #include <iostream>
+
    #include <vector>
+
    #include <algorithm>
+
    #include <fstream>
+
    #include <cmath>
+
    #include <string>
+
    #include <windows.h>
+
    using namespace std;
 
    struct customer {
@@ -997,7 +1006,7 @@ tags:
 
    禁忌搜索算法结果：
 
-   ![img](/img/TabuSearch.png)
+   ![img](/img/TabuSearch1.png)
 
    ​分析：相比于贪心算法，禁忌搜索算法求解结果有些许提升，但所需时间更多，禁忌搜索的结果很大程度上取决于迭代次数，以及具体邻域移动规则的设定，禁忌破解与禁忌表长度的最佳选取，此处实现的禁忌搜索仍有很大的提升空间。
 
@@ -1448,16 +1457,27 @@ tags:
    * RandomLocalSearch.h -- Use random local search to solve CFLP
    */
    #ifndef RANDOM_LOCAL_SEARCH_H
+
    #define RANDOM_LOCAL_SEARCH_H
+
    #include <iostream>
+
    #include <vector>
+
    #include <fstream>
+
    #include <algorithm>
+
    #include <string>
+
    #include <cstdio>
+
    #include <ctime>
+
    #include <cmath>
+
    #include <windows.h>
+
    using namespace std;
 
    class RLS{
@@ -1738,7 +1758,7 @@ tags:
 
    随机局部搜索结果：
 
-   ![img](/img/RLS.png)
+   ![img](/img/RLS1.png)
 
    分析：随机局部搜索算法消耗较多时间，运行结果比贪心算法与禁忌搜索算法要好挺多，主要原因在于迭代过程的初始随机状态，可以很大程度上避免过早陷入局部最优，避免`一叶障目`。
    
