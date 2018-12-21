@@ -44,7 +44,6 @@ tags:
 
 4. 同时，上述数学描述还需要满足约束：同一顾客不能被多台设备同时服务；设备服务总数不能超过其容量。在此约束下求解目标规划函数的最优解。此种`0-1`整数规划问题本质为`NP-Hard`问题，一般具有两类方法进行问题求解：
   * `Branch and Cut`，利用运筹学方法直接求解最优解，但是缺点是运行时间十分的长。
-
   * `Approximate Search`，近似规划找出问题的近似解，运行时间短找出一个比较好的解。
 
     ​
@@ -67,14 +66,12 @@ tags:
    */
    #ifndef GREEDY_ALGORITHM_H
    #define GREEDY_ALGORITHM_H
-
    #include <iostream>
    #include <vector>
    #include <fstream>
    #include <algorithm>
    #include <string>
    #include <windows.h>
-
    using namespace std;
 
    struct customer {
@@ -679,7 +676,6 @@ tags:
    */
    #ifndef TABU_SEARCH_H
    #define TABU_SEARCH_H
-
    #include <iostream>
    #include <vector>
    #include <algorithm>
@@ -687,7 +683,6 @@ tags:
    #include <cmath>
    #include <string>
    #include <windows.h>
-
    using namespace std;
 
    struct customer {
@@ -996,15 +991,11 @@ tags:
 
    ![img](/img/TabuSearch.png)
 
-   ​	分析：相比于贪心算法，禁忌搜索算法求解结果有些许提升，但所需时间更多，禁忌搜索的结果很	
+   ​分析：相比于贪心算法，禁忌搜索算法求解结果有些许提升，但所需时间更多，禁忌搜索的结果很大程度上取决于迭代次数，以及具体邻域移动规则的设定，禁忌破解与禁忌表长度的最佳选取，此处实现的禁忌搜索仍有很大的提升空间。
 
-   ​		   大程度上取决于迭代次数，以及具体邻域移动规则的设定，禁忌破解与禁忌表长度的最佳选取，
-
-   ​		  此处实现的禁忌搜索仍有很大的提升空间。
-
-   ​
 
    禁忌搜索算法具体样例结果：
+
    p1
 
 	```
@@ -1450,7 +1441,6 @@ tags:
    */
    #ifndef RANDOM_LOCAL_SEARCH_H
    #define RANDOM_LOCAL_SEARCH_H
-
    #include <iostream>
    #include <vector>
    #include <fstream>
@@ -1460,7 +1450,6 @@ tags:
    #include <ctime>
    #include <cmath>
    #include <windows.h>
-
    using namespace std;
 
    class RLS{
@@ -1735,12 +1724,15 @@ tags:
    	return 0;
    }
    ```
-
+   结构分析：
+   * 此处的随机局部搜索的主体为迭代循环，每次循环开始之前随机初始状态，然后结合函数`chooseBestNeighbor()`选择开销最小的当前状态邻域，进行开销比较，更新当前最优状态。
    ​
 
    随机局部搜索结果：
 
    ![img](/img/RLS.png)
+
+   分析：随机局部搜索算法消耗较多时间，运行结果比贪心算法与禁忌搜索算法要好挺多，主要原因在于迭代过程的初始随机状态，可以很大程度上避免过早陷入局部最优，避免`一叶障目`。
    
 	随机局部搜索具体样例结果：
 
