@@ -4,7 +4,7 @@ title:    "Service Computing课程博客(五) - kubernetes 容器云实验环境
 subtitle: " \"Install kubernetes with Rancher....\""
 date:     2018-12-31
 author:   "Palette"
-header-img: "img/green.jpg"
+header-img: "img/ku.jpg"
 catalog: true
 tags:
     - kubernetes
