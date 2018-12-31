@@ -68,4 +68,4 @@ docker run -d --name rancher-server -p 8080:8080 --restart=unless-stopped ranche
 ![img](/img/Service_Computing_blogs/4.bmp)
 
 3. 使用刚刚创建的模板，创建一个Kubernetes环境并添加主机。
-![img](/img/Service_Computing_blogs/5.bmp)
+![img](/img/Service_Computing_blogs/6.bmp)
